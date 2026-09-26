@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujocoinclude>
+  <default>
+    <default class="fastgripper">
+      <joint type="hinge" axis="0 1 0" damping="0.002" armature="1e-7" solreflimit="0.003 1" solimplimit="0.99 0.999 0.001" />
+      <geom contype="0" conaffinity="0" group="1" />
+      <site size="0.0015" rgba="1 0.85 0.2 1" group="3" />
+      <equality solref="0.002 1" solimp="0.9999 0.9999 0.001" />
+    </default>
+  </default>
+  <custom>
+    <numeric name="signed_worm_ratio" data="-20" />
+    <numeric name="open_motor_rad" data="-3.0" />
+    <numeric name="closed_motor_rad" data="10.4" />
+    <numeric name="motor_torque_cap_nm" data="1.5" />
+    <numeric name="backlash_full_width_wheel_deg" data="0.1" />
+    <text name="model_scope" data="Provisional simulation parameters; simplified exterior; not hardware-calibrated." />
+  </custom>
+  <asset>
+    <mesh name="finger_positive" file="meshes/finger_positive.obj" />
+    <mesh name="finger_positive_upper" file="meshes/finger_positive_upper.obj" />
+    <mesh name="finger_negative" file="meshes/finger_negative.obj" />
+    <mesh name="finger_negative_upper" file="meshes/finger_negative_upper.obj" />
+  </asset>
+  <equality>
+    <connect name="four_bar_closure" site1="finger_pivot_B" site2="follower_tip_B" class="fastgripper" />
+    <connect name="four_bar_negative_closure" site1="finger_negative_pivot_B" site2="follower_negative_tip_B" class="fastgripper" />
+  </equality>
+  <tendon>
+    <fixed name="worm_positive_backlash" limited="true" range="-0.000872664625997 0.000872664625997" solreflimit="0.002 1" solimplimit="0.9999 0.9999 0.001">
+      <joint joint="driver_positive_joint" coef="1" />
+      <joint joint="worm_joint" coef="0.05" />
+    </fixed>
+    <fixed name="worm_negative_backlash" limited="true" range="-0.000872664625997 0.000872664625997" solreflimit="0.002 1" solimplimit="0.9999 0.9999 0.001">
+      <joint joint="driver_negative_joint" coef="1" />
+      <joint joint="worm_joint" coef="-0.05" />
+    </fixed>
+  </tendon>
+  <actuator>
+    <general name="worm_motor" joint="worm_joint" gear="1" dyntype="none" gaintype="fixed" biastype="affine" gainprm="1" biasprm="0 0 -1" ctrllimited="true" ctrlrange="-4 4" forcelimited="true" forcerange="-1.5 1.5" />
+  </actuator>
+  <sensor>
+    <jointpos name="motor_angle" joint="worm_joint" />
+    <jointvel name="motor_velocity" joint="worm_joint" />
+    <actuatorfrc name="motor_torque" actuator="worm_motor" />
+  </sensor>
+</mujocoinclude>

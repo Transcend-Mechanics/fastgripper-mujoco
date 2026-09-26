@@ -1,0 +1,83 @@
+name: Release tested simulation package
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing tag matching the package version (for example v0.3.0)
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ inputs.tag }}
+  cancel-in-progress: false
+
+jobs:
+  verify-and-build:
+    # Match the locked ARM64 CPU training environment without CUDA downloads.
+    runs-on: macos-15
+    timeout-minutes: 40
+    env:
+      RELEASE_TAG: ${{ inputs.tag }}
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ inputs.tag }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
+        with:
+          version: '0.10.7'
+          python-version: '3.12'
+          enable-cache: true
+      - run: uv sync --locked --extra learn
+      - name: Confirm owner license decision and tag
+        run: uv run --locked python scripts/check_release.py --tag "$RELEASE_TAG"
+      - run: uv run --locked python -m fastgripper_sim.assets
+      - run: uv run --locked python -m fastgripper_sim.models --verify
+      - run: uv run --locked python scripts/verify_release_provenance.py
+      - run: uv run --locked --extra learn pytest -q tests
+      - name: Build and checksum distribution files
+        run: |
+          uv build
+          uv run --locked python scripts/checksums.py
+      - name: Install the wheel and test outside the checkout
+        shell: bash
+        run: |
+          uv export --locked --no-dev --no-emit-project --no-hashes --output-file "$RUNNER_TEMP/runtime-requirements.txt"
+          uv venv --python 3.12 "$RUNNER_TEMP/wheel-venv"
+          uv pip install --python "$RUNNER_TEMP/wheel-venv/bin/python" -r "$RUNNER_TEMP/runtime-requirements.txt" dist/*.whl
+          cp scripts/wheel_smoke.py "$RUNNER_TEMP/wheel_smoke.py"
+          cd "$RUNNER_TEMP"
+          env -u PYTHONPATH "$RUNNER_TEMP/wheel-venv/bin/python" -I wheel_smoke.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: release-distributions
+          path: dist/*
+          if-no-files-found: error
+
+  publish:
+    needs: verify-and-build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      RELEASE_TAG: ${{ inputs.tag }}
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: release-distributions
+          path: dist
+      - name: Verify downloaded artifact checksums
+        working-directory: dist
+        run: sha256sum --check SHA256SUMS
+      - name: Create release without replacing an existing release
+        run: gh release create "$RELEASE_TAG" dist/* --verify-tag --title "$RELEASE_TAG" --generate-notes

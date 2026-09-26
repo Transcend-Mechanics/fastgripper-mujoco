@@ -1,0 +1,220 @@
+{
+  "choices": {
+    "stock-metal": {
+      "behavior": "rigid",
+      "calibration": "provisional",
+      "entrypoints": {
+        "demonstration": "scene.xml",
+        "gripper": "model.xml"
+      },
+      "label": "Stock bare metal fingertips",
+      "material": "bare metal",
+      "sides": {
+        "negative": {
+          "attachment": {
+            "behavior": "fixed rigid attachment",
+            "joint": null,
+            "position_in_carrier_m": [
+              0.0137441182253,
+              0.00243382114975,
+              0.0292400347291
+            ],
+            "quaternion_wxyz": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "carrier_body": "finger_negative_x",
+          "carrier_inertial": {
+            "center_m": [
+              0.00535734366774,
+              0.00243325179329,
+              0.0135328354144
+            ],
+            "full_inertia_kg_m2": [
+              6.14650951596e-06,
+              7.16870893062e-06,
+              3.19233270801e-06,
+              2.46135989523e-10,
+              -1.41977260246e-06,
+              2.83782150206e-10
+            ],
+            "full_inertia_order": [
+              "xx",
+              "yy",
+              "zz",
+              "xy",
+              "xz",
+              "yz"
+            ],
+            "mass_kg": 0.05641717967546769
+          },
+          "contact": {
+            "condim": 4,
+            "friction": [
+              0.35,
+              0.001,
+              0.0001
+            ],
+            "geom": "finger_negative_contact",
+            "half_size_m": [
+              0.0005,
+              0.007112,
+              0.014000000002
+            ],
+            "position_in_tip_m": [
+              0.00749999999896,
+              0.0,
+              0.0190000000016
+            ],
+            "surface_position_in_tip_m": [
+              0.00799999999896,
+              0.0,
+              0.0190000000016
+            ],
+            "surface_site": "finger_negative_contact_surface",
+            "type": "box"
+          },
+          "tip_body": "fingertip_negative",
+          "tip_inertial": {
+            "center_m": [
+              0.00263170397863,
+              1.00742678089e-12,
+              0.0154603421545
+            ],
+            "full_inertia_kg_m2": [
+              4.35862820418e-06,
+              4.32244839677e-06,
+              1.10167689432e-06,
+              8.20792429031e-17,
+              -5.99192737473e-07,
+              -3.40200460966e-08
+            ],
+            "full_inertia_order": [
+              "xx",
+              "yy",
+              "zz",
+              "xy",
+              "xz",
+              "yz"
+            ],
+            "mass_kg": 0.03267114472974385
+          },
+          "visual_mesh": "meshes/stock_metal_negative.obj"
+        },
+        "positive": {
+          "attachment": {
+            "behavior": "fixed rigid attachment",
+            "joint": null,
+            "position_in_carrier_m": [
+              -0.0137441182253,
+              0.00243382114975,
+              0.0292400347291
+            ],
+            "quaternion_wxyz": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "carrier_body": "finger_positive_x",
+          "carrier_inertial": {
+            "center_m": [
+              -0.00530055079543,
+              0.00243331122309,
+              0.0134831142254
+            ],
+            "full_inertia_kg_m2": [
+              6.13166605309e-06,
+              7.14542252102e-06,
+              3.17011930906e-06,
+              -2.37785431107e-10,
+              1.41237706575e-06,
+              2.74771719927e-10
+            ],
+            "full_inertia_order": [
+              "xx",
+              "yy",
+              "zz",
+              "xy",
+              "xz",
+              "yz"
+            ],
+            "mass_kg": 0.05522701213752841
+          },
+          "contact": {
+            "condim": 4,
+            "friction": [
+              0.35,
+              0.001,
+              0.0001
+            ],
+            "geom": "finger_positive_contact",
+            "half_size_m": [
+              0.0005,
+              0.007112,
+              0.014000000002
+            ],
+            "position_in_tip_m": [
+              -0.00749999999895,
+              0.0,
+              0.0190000000016
+            ],
+            "surface_position_in_tip_m": [
+              -0.00799999999895,
+              0.0,
+              0.0190000000016
+            ],
+            "surface_site": "finger_positive_contact_surface",
+            "type": "box"
+          },
+          "tip_body": "fingertip_positive",
+          "tip_inertial": {
+            "center_m": [
+              -0.00263170397862,
+              1.00688424612e-12,
+              0.0154603421545
+            ],
+            "full_inertia_kg_m2": [
+              4.35862820418e-06,
+              4.32244839677e-06,
+              1.10167689432e-06,
+              -7.91620084932e-17,
+              5.99192737474e-07,
+              -3.40200460967e-08
+            ],
+            "full_inertia_order": [
+              "xx",
+              "yy",
+              "zz",
+              "xy",
+              "xz",
+              "yz"
+            ],
+            "mass_kg": 0.032671144729753
+          },
+          "visual_mesh": "meshes/stock_metal_positive.obj"
+        }
+      }
+    }
+  },
+  "hardware_revision": "v1.1",
+  "interface_scope": "Simulation attachment frames only; not a manufacturing interface specification.",
+  "limitations": [
+    "No bolt patterns, threads, tolerances or mechanical fabrication dimensions are supplied.",
+    "The fixed attachment assumes tightened screws; fastener preload/compliance are unmodeled.",
+    "Only stock-metal is included; flexible TPU behavior is not implemented."
+  ],
+  "mechanical_interface_released": false,
+  "schema_version": 1,
+  "selected": "stock-metal",
+  "swap_requirements": [
+    "Keep each carrier and its four-bar joint intact.",
+    "Replace tip geometry, inertia and contact surfaces together.",
+    "Recompute opening calibration, TCP and contact validation for each tip.",
+    "Publish each validated tip as a distinct versioned asset configuration."
+  ]
+}

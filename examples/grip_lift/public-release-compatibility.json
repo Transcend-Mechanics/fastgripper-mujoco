@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "original_package_version": "0.2.0",
+  "public_package_version": "0.3.0",
+  "reason": "The retained v1.0 policy's simulation and learning inputs are unchanged. v1.1 is a separate addition and has no retained trained-policy validation.",
+  "original_asset_manifest_text": "{\n  \"asset_version\": \"0.1.0\",\n  \"entrypoints\": {\n    \"body_fragment\": \"body.xml\",\n    \"demonstration\": \"scene.xml\",\n    \"global_fragment\": \"mechanism.xml\",\n    \"gripper\": \"model.xml\"\n  },\n  \"files\": {\n    \"LICENSE\": \"402d544457cc4fce08579fb818cf9900e56e1d9bbd45a76490017fdb5a9b581c\",\n    \"README.md\": \"b122927f0e42d818612d22ae619f213b42b85909d57317e73e39c2f5eeb43b43\",\n    \"body.xml\": \"600351f183ebfa8af75415fdd2c312aed7325acbca30bf9a56eba45c98c4e643\",\n    \"mechanism.xml\": \"e410814b6cc2e9803c4571d7cd4e82b3aebd972e17651dfe9fa6f9449c7b6f25\",\n    \"meshes/finger_negative.obj\": \"e568a6ae06cb2e88bdb0db12f33b5fa27466c8ed52f65950b09f4a6ac5f19958\",\n    \"meshes/finger_negative_upper.obj\": \"06d2b26590b98fae5ec73264c24565c508a0f063d9ccc4f2dfe7db88cd5cacad\",\n    \"meshes/finger_positive.obj\": \"7a58cc7179adf550d4e7c2b3515924253857782e18c25011a44816096247b004\",\n    \"meshes/finger_positive_upper.obj\": \"caa03ebe87adaa00c0350c28fdb2b9532e2f73f2a28d92abc855bc8ffdc5a660\",\n    \"model.xml\": \"840fb52e9565c51c6255ba0ae816a60898747f68df36e524f60597c302625990\",\n    \"scene.xml\": \"ec86ba7b67ecf25511dad6c4893b8cb1f47e314bc032656d4e41050a77eb1cd6\"\n  },\n  \"generator\": \"fastgripper-runtime-export\",\n  \"geometry\": {\n    \"collision_bits\": {\n      \"environment\": 4,\n      \"gripper\": 1,\n      \"object\": 2\n    },\n    \"self_collision\": \"disabled by masks; external envelopes approximate\",\n    \"source_meshes_copied\": false,\n    \"type\": \"authored primitives and solid extruded finger outlines\"\n  },\n  \"interface\": {\n    \"actuator\": \"worm_motor\",\n    \"base_site\": \"gripper_base\",\n    \"contact_surfaces\": [\n      \"finger_positive_contact_surface\",\n      \"finger_negative_contact_surface\"\n    ],\n    \"instantaneous_tcp\": \"midpoint of contact_surfaces; orientation follows gripper_base\",\n    \"joints\": [\n      \"worm_joint\",\n      \"driver_positive_joint\",\n      \"finger_joint\",\n      \"follower_joint\",\n      \"driver_negative_joint\",\n      \"finger_negative_joint\",\n      \"follower_negative_joint\"\n    ],\n    \"position_command\": \"0 percent open, 100 percent closed; requires runtime controller\",\n    \"raw_control\": \"shaft velocity rad/s with native torque cap\",\n    \"reference_tcp_site\": \"jaw_tcp_reference\",\n    \"root_body\": \"gripper_mount\"\n  },\n  \"limitations\": [\n    \"Physical parameters and hardware limits are uncalibrated.\",\n    \"No adapter or robot flange transform is supplied.\",\n    \"Bare metal fingers; no pads or pad mass.\",\n    \"Geometry removes manufacturing detail; mechanism and inertial parameters remain visible.\",\n    \"All rights reserved; this package grants no redistribution license.\"\n  ],\n  \"schema_version\": 1,\n  \"tested_mujoco_version\": \"3.13.0\",\n  \"units\": {\n    \"angle\": \"rad\",\n    \"length\": \"m\",\n    \"mass\": \"kg\",\n    \"time\": \"s\",\n    \"torque\": \"N m\"\n  }\n}\n",
+  "original_asset_manifest": {
+    "asset_version": "0.1.0",
+    "entrypoints": {
+      "body_fragment": "body.xml",
+      "demonstration": "scene.xml",
+      "global_fragment": "mechanism.xml",
+      "gripper": "model.xml"
+    },
+    "files": {
+      "LICENSE": "402d544457cc4fce08579fb818cf9900e56e1d9bbd45a76490017fdb5a9b581c",
+      "README.md": "b122927f0e42d818612d22ae619f213b42b85909d57317e73e39c2f5eeb43b43",
+      "body.xml": "600351f183ebfa8af75415fdd2c312aed7325acbca30bf9a56eba45c98c4e643",
+      "mechanism.xml": "e410814b6cc2e9803c4571d7cd4e82b3aebd972e17651dfe9fa6f9449c7b6f25",
+      "meshes/finger_negative.obj": "e568a6ae06cb2e88bdb0db12f33b5fa27466c8ed52f65950b09f4a6ac5f19958",
+      "meshes/finger_negative_upper.obj": "06d2b26590b98fae5ec73264c24565c508a0f063d9ccc4f2dfe7db88cd5cacad",
+      "meshes/finger_positive.obj": "7a58cc7179adf550d4e7c2b3515924253857782e18c25011a44816096247b004",
+      "meshes/finger_positive_upper.obj": "caa03ebe87adaa00c0350c28fdb2b9532e2f73f2a28d92abc855bc8ffdc5a660",
+      "model.xml": "840fb52e9565c51c6255ba0ae816a60898747f68df36e524f60597c302625990",
+      "scene.xml": "ec86ba7b67ecf25511dad6c4893b8cb1f47e314bc032656d4e41050a77eb1cd6"
+    },
+    "generator": "fastgripper-runtime-export",
+    "geometry": {
+      "collision_bits": {
+        "environment": 4,
+        "gripper": 1,
+        "object": 2
+      },
+      "self_collision": "disabled by masks; external envelopes approximate",
+      "source_meshes_copied": false,
+      "type": "authored primitives and solid extruded finger outlines"
+    },
+    "interface": {
+      "actuator": "worm_motor",
+      "base_site": "gripper_base",
+      "contact_surfaces": [
+        "finger_positive_contact_surface",
+        "finger_negative_contact_surface"
+      ],
+      "instantaneous_tcp": "midpoint of contact_surfaces; orientation follows gripper_base",
+      "joints": [
+        "worm_joint",
+        "driver_positive_joint",
+        "finger_joint",
+        "follower_joint",
+        "driver_negative_joint",
+        "finger_negative_joint",
+        "follower_negative_joint"
+      ],
+      "position_command": "0 percent open, 100 percent closed; requires runtime controller",
+      "raw_control": "shaft velocity rad/s with native torque cap",
+      "reference_tcp_site": "jaw_tcp_reference",
+      "root_body": "gripper_mount"
+    },
+    "limitations": [
+      "Physical parameters and hardware limits are uncalibrated.",
+      "No adapter or robot flange transform is supplied.",
+      "Bare metal fingers; no pads or pad mass.",
+      "Geometry removes manufacturing detail; mechanism and inertial parameters remain visible.",
+      "All rights reserved; this package grants no redistribution license."
+    ],
+    "schema_version": 1,
+    "tested_mujoco_version": "3.13.0",
+    "units": {
+      "angle": "rad",
+      "length": "m",
+      "mass": "kg",
+      "time": "s",
+      "torque": "N m"
+    }
+  },
+  "original_asset_manifest_sha256": "8107307222cfec8b83ac621347219193712d23fe3f48195b45e92c8bd09fbed6",
+  "public_asset_manifest_sha256": "e0c871f8b25859de71c08c486aa67d1e8edd47701f44637a3f7ea92f6bea6067",
+  "retained_artifact_sha256": {
+    "policy.zip": "8a0f9f0034f65e8005fced70f42c6cdbf8761735c646a30c4c2273926b675001",
+    "training.json": "58b1f90cf0e8f8497f4e5c49fc7d809d09c76e335aaf642860649389c2a52c32",
+    "evaluation.json": "f7981814f081ec6f2b48cfd7d77975330fb2cd2005128cfac4b320d11a4219d2",
+    "rollout.json": "3a6620453a1f248cdf66119d9e0ff4415d94024b81bc855fac6eea18282f8e58"
+  }
+}

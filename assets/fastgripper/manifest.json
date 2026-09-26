@@ -1,0 +1,71 @@
+{
+  "asset_version": "0.1.1",
+  "entrypoints": {
+    "body_fragment": "body.xml",
+    "demonstration": "scene.xml",
+    "global_fragment": "mechanism.xml",
+    "gripper": "model.xml"
+  },
+  "files": {
+    "LICENSE": "a367b948c6fb263268a3db1f688d1c6aef228c97ea8a193b7c89c0e555df77b7",
+    "README.md": "0d469da8742a2c60d25f8b9d354704d58e8a4b4fb547ff4374311875b418f493",
+    "body.xml": "600351f183ebfa8af75415fdd2c312aed7325acbca30bf9a56eba45c98c4e643",
+    "mechanism.xml": "e410814b6cc2e9803c4571d7cd4e82b3aebd972e17651dfe9fa6f9449c7b6f25",
+    "meshes/finger_negative.obj": "e568a6ae06cb2e88bdb0db12f33b5fa27466c8ed52f65950b09f4a6ac5f19958",
+    "meshes/finger_negative_upper.obj": "06d2b26590b98fae5ec73264c24565c508a0f063d9ccc4f2dfe7db88cd5cacad",
+    "meshes/finger_positive.obj": "7a58cc7179adf550d4e7c2b3515924253857782e18c25011a44816096247b004",
+    "meshes/finger_positive_upper.obj": "caa03ebe87adaa00c0350c28fdb2b9532e2f73f2a28d92abc855bc8ffdc5a660",
+    "model.xml": "840fb52e9565c51c6255ba0ae816a60898747f68df36e524f60597c302625990",
+    "scene.xml": "ec86ba7b67ecf25511dad6c4893b8cb1f47e314bc032656d4e41050a77eb1cd6"
+  },
+  "generator": "fastgripper-runtime-export",
+  "geometry": {
+    "collision_bits": {
+      "environment": 4,
+      "gripper": 1,
+      "object": 2
+    },
+    "self_collision": "disabled by masks; external envelopes approximate",
+    "source_meshes_copied": false,
+    "type": "authored primitives and solid extruded finger outlines"
+  },
+  "interface": {
+    "actuator": "worm_motor",
+    "base_site": "gripper_base",
+    "contact_surfaces": [
+      "finger_positive_contact_surface",
+      "finger_negative_contact_surface"
+    ],
+    "instantaneous_tcp": "midpoint of contact_surfaces; orientation follows gripper_base",
+    "joints": [
+      "worm_joint",
+      "driver_positive_joint",
+      "finger_joint",
+      "follower_joint",
+      "driver_negative_joint",
+      "finger_negative_joint",
+      "follower_negative_joint"
+    ],
+    "position_command": "0 percent open, 100 percent closed; requires runtime controller",
+    "raw_control": "shaft velocity rad/s with native torque cap",
+    "reference_tcp_site": "jaw_tcp_reference",
+    "root_body": "gripper_mount"
+  },
+  "limitations": [
+    "Physical parameters and hardware limits are uncalibrated.",
+    "No adapter or robot flange transform is supplied.",
+    "Bare metal fingers; no pads or pad mass.",
+    "Geometry removes manufacturing detail; mechanism and inertial parameters remain visible.",
+    "Simulation and accessory license; not open-source hardware or permission to reproduce the core mechanism."
+  ],
+  "schema_version": 1,
+  "tested_mujoco_version": "3.13.0",
+  "units": {
+    "angle": "rad",
+    "length": "m",
+    "mass": "kg",
+    "time": "s",
+    "torque": "N m"
+  },
+  "license": "FastGripper Simulation and Accessory License \u2014 version 1.0"
+}

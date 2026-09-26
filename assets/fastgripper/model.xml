@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="FastGripper reusable model">
+  <compiler angle="radian" inertiafromgeom="false" autolimits="true" />
+  <option timestep="5e-05" gravity="0 0 -9.81" integrator="implicitfast" solver="Newton" iterations="100" tolerance="1e-10" cone="elliptic" impratio="10" noslip_iterations="3" />
+  <include file="mechanism.xml" />
+  <worldbody>
+    <body name="gripper_mount" childclass="fastgripper">
+      <include file="body.xml" />
+    </body>
+  </worldbody>
+  <keyframe>
+    <key name="open" qpos="-3 0.15 -0.15 0.15 -0.15 0.15 -0.15" ctrl="0" />
+  </keyframe>
+</mujoco>

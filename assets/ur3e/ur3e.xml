@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="UR3e from official robot description">
+  <compiler angle="radian" inertiafromgeom="false" autolimits="true" />
+  <option timestep="0.0005" integrator="implicitfast" gravity="0 0 -9.81" />
+  <default>
+    <default class="ur3e">
+      <joint type="hinge" axis="0 0 1" damping="0" armature="0" />
+      <site size="0.002" group="4" rgba="0.5 0.5 0.5 0.3" />
+      <default class="ur3e_visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0" />
+      </default>
+      <default class="ur3e_collision">
+        <geom type="mesh" contype="1" conaffinity="1" group="3" mass="0" />
+      </default>
+    </default>
+  </default>
+  <asset>
+    <mesh name="ur3e_base_visual_0" file="assets/ur3e_base_visual_0.obj" inertia="shell" />
+    <mesh name="ur3e_base_visual_1" file="assets/ur3e_base_visual_1.obj" inertia="shell" />
+    <mesh name="ur3e_base_collision" file="assets/base_collision.stl" />
+    <mesh name="ur3e_shoulder_visual_0" file="assets/ur3e_shoulder_visual_0.obj" inertia="shell" />
+    <mesh name="ur3e_shoulder_visual_1" file="assets/ur3e_shoulder_visual_1.obj" inertia="shell" />
+    <mesh name="ur3e_shoulder_visual_2" file="assets/ur3e_shoulder_visual_2.obj" inertia="shell" />
+    <mesh name="ur3e_shoulder_collision" file="assets/shoulder_collision.stl" />
+    <mesh name="ur3e_upper_arm_visual_0" file="assets/ur3e_upper_arm_visual_0.obj" inertia="shell" />
+    <mesh name="ur3e_upper_arm_visual_1" file="assets/ur3e_upper_arm_visual_1.obj" inertia="shell" />
+    <mesh name="ur3e_upper_arm_visual_2" file="assets/ur3e_upper_arm_visual_2.obj" inertia="shell" />
+    <mesh name="ur3e_upper_arm_visual_3" file="assets/ur3e_upper_arm_visual_3.obj" inertia="shell" />
+    <mesh name="ur3e_upper_arm_collision" file="assets/upper_arm_collision.stl" />
+    <mesh name="ur3e_forearm_visual_0" file="assets/ur3e_forearm_visual_0.obj" inertia="shell" />
+    <mesh name="ur3e_forearm_visual_1" file="assets/ur3e_forearm_visual_1.obj" inertia="shell" />
+    <mesh name="ur3e_forearm_visual_2" file="assets/ur3e_forearm_visual_2.obj" inertia="shell" />
+    <mesh name="ur3e_forearm_visual_3" file="assets/ur3e_forearm_visual_3.obj" inertia="shell" />
+    <mesh name="ur3e_forearm_collision" file="assets/forearm_collision.stl" />
+    <mesh name="ur3e_wrist_1_visual_0" file="assets/ur3e_wrist_1_visual_0.obj" inertia="shell" />
+    <mesh name="ur3e_wrist_1_visual_1" file="assets/ur3e_wrist_1_visual_1.obj" inertia="shell" />
+    <mesh name="ur3e_wrist_1_visual_2" file="assets/ur3e_wrist_1_visual_2.obj" inertia="shell" />
+    <mesh name="ur3e_wrist_1_collision" file="assets/wrist_1_collision.stl" />
+    <mesh name="ur3e_wrist_2_visual_0" file="assets/ur3e_wrist_2_visual_0.obj" inertia="shell" />
+    <mesh name="ur3e_wrist_2_visual_1" file="assets/ur3e_wrist_2_visual_1.obj" inertia="shell" />
+    <mesh name="ur3e_wrist_2_visual_2" file="assets/ur3e_wrist_2_visual_2.obj" inertia="shell" />
+    <mesh name="ur3e_wrist_2_collision" file="assets/wrist_2_collision.stl" />
+    <mesh name="ur3e_wrist_3_visual_0" file="assets/ur3e_wrist_3_visual_0.obj" inertia="shell" />
+    <mesh name="ur3e_wrist_3_collision" file="assets/wrist_3_collision.stl" />
+  </asset>
+  <worldbody>
+    <body name="base" quat="0 0 0 1" childclass="ur3e">
+      <inertial mass="2.0" pos="0 0 0" diaginertia="0.0030531654454 0.0030531654454 0.005625" />
+      <geom name="ur3e_base_visual_0" mesh="ur3e_base_visual_0" rgba="0.03310248 0.03310248 0.03310248 1" class="ur3e_visual" pos="0 0 0" quat="6.12323399573677e-17 0 0 1" />
+      <geom name="ur3e_base_visual_1" mesh="ur3e_base_visual_1" rgba="0.2784314 0.2784314 0.2784314 1" class="ur3e_visual" pos="0 0 0" quat="6.12323399573677e-17 0 0 1" />
+      <geom name="ur3e_base_collision" mesh="ur3e_base_collision" class="ur3e_collision" pos="0 0 0" quat="6.12323399573677e-17 0 0 1" />
+      <body name="shoulder_link" pos="0 0 0.15185" quat="1 0 0 0">
+        <inertial mass="1.98" pos="0 0 -0.02" quat="0.101121911410301 0.692363642466133 0.15869966613613 0.696578324090003" diaginertia="0.0020774474982776 0.00263412827060025 0.00276682423112215" />
+        <joint name="shoulder_pan_joint" limited="true" range="-6.28318530717959 6.28318530717959" />
+        <geom name="ur3e_shoulder_visual_0" mesh="ur3e_shoulder_visual_0" rgba="0.03310248 0.03310248 0.03310248 1" class="ur3e_visual" pos="0 0 0" quat="6.12323399573677e-17 0 0 1" />
+        <geom name="ur3e_shoulder_visual_1" mesh="ur3e_shoulder_visual_1" rgba="0.2784314 0.2784314 0.2784314 1" class="ur3e_visual" pos="0 0 0" quat="6.12323399573677e-17 0 0 1" />
+        <geom name="ur3e_shoulder_visual_2" mesh="ur3e_shoulder_visual_2" rgba="0.4901961 0.6784314 0.8 1" class="ur3e_visual" pos="0 0 0" quat="6.12323399573677e-17 0 0 1" />
+        <geom name="ur3e_shoulder_collision" mesh="ur3e_shoulder_collision" class="ur3e_collision" pos="0 0 0" quat="6.12323399573677e-17 0 0 1" />
+        <body name="upper_arm_link" pos="0 0 0" quat="0.707106781114032 0.707106781259063 0 0">
+          <inertial mass="3.4445" pos="-0.11355 0 0.1157" quat="0.710715202951242 0.703239659990755 -0.0127137729279992 0.0132755748650053" diaginertia="0.00420725399322178 0.0449495849121434 0.0460285610946348" />
+          <joint name="shoulder_lift_joint" limited="true" range="-6.28318530717959 6.28318530717959" />
+          <geom name="ur3e_upper_arm_visual_0" mesh="ur3e_upper_arm_visual_0" rgba="0.03310248 0.03310248 0.03310248 1" class="ur3e_visual" pos="0 0 0.12" quat="0.5 0.5 -0.5 -0.5" />
+          <geom name="ur3e_upper_arm_visual_1" mesh="ur3e_upper_arm_visual_1" rgba="0.2784314 0.2784314 0.2784314 1" class="ur3e_visual" pos="0 0 0.12" quat="0.5 0.5 -0.5 -0.5" />
+          <geom name="ur3e_upper_arm_visual_2" mesh="ur3e_upper_arm_visual_2" rgba="0.8203922 0.8203922 0.8203922 1" class="ur3e_visual" pos="0 0 0.12" quat="0.5 0.5 -0.5 -0.5" />
+          <geom name="ur3e_upper_arm_visual_3" mesh="ur3e_upper_arm_visual_3" rgba="0.4901961 0.6784314 0.8 1" class="ur3e_visual" pos="0 0 0.12" quat="0.5 0.5 -0.5 -0.5" />
+          <geom name="ur3e_upper_arm_collision" mesh="ur3e_upper_arm_collision" class="ur3e_collision" pos="0 0 0.12" quat="0.5 0.5 -0.5 -0.5" />
+          <body name="forearm_link" pos="-0.24355 0 0" quat="1 0 0 0">
+            <inertial mass="1.437" pos="-0.1632 0 0.0238" quat="0.710210008041022 -0.70398794481825 -0.00117063726891179 -0.00116087782879353" diaginertia="0.00105099085928638 0.0110895897817103 0.0113396193590034" />
+            <joint name="elbow_joint" limited="true" range="-3.14159265358979 3.14159265358979" />
+            <geom name="ur3e_forearm_visual_0" mesh="ur3e_forearm_visual_0" rgba="0.03310248 0.03310248 0.03310248 1" class="ur3e_visual" pos="0 0 0.027" quat="0.5 0.5 -0.5 -0.5" />
+            <geom name="ur3e_forearm_visual_1" mesh="ur3e_forearm_visual_1" rgba="0.2784314 0.2784314 0.2784314 1" class="ur3e_visual" pos="0 0 0.027" quat="0.5 0.5 -0.5 -0.5" />
+            <geom name="ur3e_forearm_visual_2" mesh="ur3e_forearm_visual_2" rgba="0.8203922 0.8203922 0.8203922 1" class="ur3e_visual" pos="0 0 0.027" quat="0.5 0.5 -0.5 -0.5" />
+            <geom name="ur3e_forearm_visual_3" mesh="ur3e_forearm_visual_3" rgba="0.4901961 0.6784314 0.8 1" class="ur3e_visual" pos="0 0 0.027" quat="0.5 0.5 -0.5 -0.5" />
+            <geom name="ur3e_forearm_collision" mesh="ur3e_forearm_collision" class="ur3e_collision" pos="0 0 0.027" quat="0.5 0.5 -0.5 -0.5" />
+            <body name="wrist_1_link" pos="-0.2132 0 0.13105" quat="1 0 0 0">
+              <inertial mass="0.871" pos="0 -0.01 0" quat="-0.397005356881572 -0.58199776950821 0.401511122274627 0.585195831824333" diaginertia="0.000525694778144536 0.000708388747044926 0.000817416474810538" />
+              <joint name="wrist_1_joint" limited="true" range="-6.28318530717959 6.28318530717959" />
+              <geom name="ur3e_wrist_1_visual_0" mesh="ur3e_wrist_1_visual_0" rgba="0.03310248 0.03310248 0.03310248 1" class="ur3e_visual" pos="0 0 -0.104" quat="0.707106781186548 0.707106781186547 0 0" />
+              <geom name="ur3e_wrist_1_visual_1" mesh="ur3e_wrist_1_visual_1" rgba="0.2784314 0.2784314 0.2784314 1" class="ur3e_visual" pos="0 0 -0.104" quat="0.707106781186548 0.707106781186547 0 0" />
+              <geom name="ur3e_wrist_1_visual_2" mesh="ur3e_wrist_1_visual_2" rgba="0.4901961 0.6784314 0.8 1" class="ur3e_visual" pos="0 0 -0.104" quat="0.707106781186548 0.707106781186547 0 0" />
+              <geom name="ur3e_wrist_1_collision" mesh="ur3e_wrist_1_collision" class="ur3e_collision" pos="0 0 -0.104" quat="0.707106781186548 0.707106781186547 0 0" />
+              <body name="wrist_2_link" pos="0 -0.08535 -1.75055776237835e-11" quat="0.707106781114032 0.707106781259063 0 0">
+                <inertial mass="0.805" pos="0 0.01 0" quat="0.524590354410172 0.472564331542278 -0.539077990861633 -0.459219808351508" diaginertia="0.000379501411915841 0.000587282292086841 0.000605916295997319" />
+                <joint name="wrist_2_joint" limited="true" range="-6.28318530717959 6.28318530717959" />
+                <geom name="ur3e_wrist_2_visual_0" mesh="ur3e_wrist_2_visual_0" rgba="0.03310248 0.03310248 0.03310248 1" class="ur3e_visual" pos="0 0 -0.08535" quat="1 0 0 0" />
+                <geom name="ur3e_wrist_2_visual_1" mesh="ur3e_wrist_2_visual_1" rgba="0.2784314 0.2784314 0.2784314 1" class="ur3e_visual" pos="0 0 -0.08535" quat="1 0 0 0" />
+                <geom name="ur3e_wrist_2_visual_2" mesh="ur3e_wrist_2_visual_2" rgba="0.4901961 0.6784314 0.8 1" class="ur3e_visual" pos="0 0 -0.08535" quat="1 0 0 0" />
+                <geom name="ur3e_wrist_2_collision" mesh="ur3e_wrist_2_collision" class="ur3e_collision" pos="0 0 -0.08535" quat="1 0 0 0" />
+                <body name="wrist_3_link" pos="0 0.0921 -1.8890025766262e-11" quat="0.707106781114032 -0.707106781259063 8.65956056235493e-17 8.88052768481568e-27">
+                  <inertial mass="0.261" pos="0 0 -0.02" quat="0.996706499498215 0.0033527931876088 -0.00198413328845986 0.0809998509316522" diaginertia="0.000107983184090084 0.000108615073666365 0.000137101742243552" />
+                  <joint name="wrist_3_joint" limited="false" range="-6.28318530717959 6.28318530717959" />
+                  <geom name="ur3e_wrist_3_visual_0" mesh="ur3e_wrist_3_visual_0" rgba="0.8203922 0.8203922 0.8203922 1" class="ur3e_visual" pos="0 0 -0.0921" quat="0.707106781186548 0.707106781186547 0 0" />
+                  <geom name="ur3e_wrist_3_collision" mesh="ur3e_wrist_3_collision" class="ur3e_collision" pos="0 0 -0.0921" quat="0.707106781186548 0.707106781186547 0 0" />
+                  <site name="flange" pos="0 0 0" quat="0.5 -0.5 -0.5 -0.5" />
+                  <site name="tool0" pos="0 0 0" quat="1 0 0 0" />
+                  <site name="attachment_site" pos="0 0 0" quat="1 0 0 0" />
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <general name="shoulder_pan" joint="shoulder_pan_joint" gaintype="fixed" biastype="affine" gainprm="2000" biasprm="0 -2000 -400" ctrllimited="true" ctrlrange="-6.28318530717959 6.28318530717959" forcelimited="true" forcerange="-54 54" />
+    <general name="shoulder_lift" joint="shoulder_lift_joint" gaintype="fixed" biastype="affine" gainprm="2000" biasprm="0 -2000 -400" ctrllimited="true" ctrlrange="-6.28318530717959 6.28318530717959" forcelimited="true" forcerange="-54 54" />
+    <general name="elbow" joint="elbow_joint" gaintype="fixed" biastype="affine" gainprm="2000" biasprm="0 -2000 -400" ctrllimited="true" ctrlrange="-3.14159265358979 3.14159265358979" forcelimited="true" forcerange="-28 28" />
+    <general name="wrist_1" joint="wrist_1_joint" gaintype="fixed" biastype="affine" gainprm="500" biasprm="0 -500 -100" ctrllimited="true" ctrlrange="-6.28318530717959 6.28318530717959" forcelimited="true" forcerange="-9 9" />
+    <general name="wrist_2" joint="wrist_2_joint" gaintype="fixed" biastype="affine" gainprm="500" biasprm="0 -500 -100" ctrllimited="true" ctrlrange="-6.28318530717959 6.28318530717959" forcelimited="true" forcerange="-9 9" />
+    <general name="wrist_3" joint="wrist_3_joint" gaintype="fixed" biastype="affine" gainprm="500" biasprm="0 -500 -100" ctrllimited="true" ctrlrange="-6.28318530717959 6.28318530717959" forcelimited="true" forcerange="-9 9" />
+  </actuator>
+  <custom>
+    <numeric name="ur3e_max_joint_velocity_rad_s" data="3.14159265358979 3.14159265358979 3.14159265358979 6.28318530717959 6.28318530717959 6.28318530717959" />
+    <text name="arm_control_scope" data="Ideal position servos with official effort caps; velocity limits recorded, not hard solver constraints." />
+  </custom>
+  <contact>
+    <exclude name="ur3e_base_shoulder_interface" body1="base" body2="shoulder_link" />
+  </contact>
+  <keyframe>
+    <key name="home" qpos="-1.5707963267949 -1.5707963267949 1.5707963267949 -1.5707963267949 -1.5707963267949 0" ctrl="-1.5707963267949 -1.5707963267949 1.5707963267949 -1.5707963267949 -1.5707963267949 0" />
+  </keyframe>
+</mujoco>

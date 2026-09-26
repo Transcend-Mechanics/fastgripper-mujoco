@@ -1,0 +1,89 @@
+{
+  "algorithm": "SAC",
+  "seed": 7,
+  "requested_timesteps": 6000,
+  "trained_timesteps": 6000,
+  "completed_episodes": 136,
+  "wall_seconds": 242.0462217500026,
+  "created_utc": "2026-09-18T18:07:50.738275+00:00",
+  "model_reference": "assets/fastgripper/scene.xml",
+  "model_xml_sha256": "ec86ba7b67ecf25511dad6c4893b8cb1f47e314bc032656d4e41050a77eb1cd6",
+  "runtime_source_sha256": {
+    "env.py": "f728a2cd0a4eb51c87aa8b48f8c238212edb3ad9eb104d28f68643b915e67c2f",
+    "controller.py": "3c2fccf5da6c8314a2f5a6b40b2eb915005e1fb00e17cb268ebfe1ccb4d69c3a",
+    "fixture.py": "10e0f91dac5f27f5f5c49fa61aa85aa3028bbd4eb26ae5b881013fa2d25643bf"
+  },
+  "asset_manifest_sha256": "8107307222cfec8b83ac621347219193712d23fe3f48195b45e92c8bd09fbed6",
+  "checkpoint_sha256": "8a0f9f0034f65e8005fced70f42c6cdbf8761735c646a30c4c2273926b675001",
+  "hyperparameters": {
+    "learning_rate": 0.0003,
+    "buffer_size": 50000,
+    "learning_starts": 200,
+    "batch_size": 64,
+    "tau": 0.005,
+    "gamma": 0.98,
+    "train_freq": 1,
+    "gradient_steps": 1,
+    "ent_coef": "auto",
+    "policy_kwargs": {
+      "net_arch": [
+        64,
+        64
+      ],
+      "use_sde": false
+    }
+  },
+  "environment": {
+    "task": "grip-lift-hold",
+    "config": {
+      "policy_hz": 20,
+      "close_seconds": 0.8,
+      "lift_seconds": 0.6,
+      "hold_seconds": 0.8,
+      "lift_m": 0.05,
+      "success_height_m": 0.045,
+      "success_hold_seconds": 0.5,
+      "pregrasp_driver_rad": -0.23,
+      "min_force_pct": 5.0,
+      "max_force_pct": 45.0,
+      "min_mass_kg": 0.03,
+      "max_mass_kg": 0.07,
+      "min_friction": 0.25,
+      "max_friction": 0.45
+    },
+    "observations": [
+      "phase_fraction",
+      "aperture_m/0.1",
+      "motor_angle_rad/12",
+      "motor_velocity_rad_s/4",
+      "motor_torque_nm/1.5",
+      "block_lift_m/0.05",
+      "block_vertical_velocity_m_s/0.2",
+      "fixture_lift_m/0.05",
+      "positive_normal_n/30",
+      "negative_normal_n/30",
+      "mass_kg/0.1",
+      "friction",
+      "held_target_fraction",
+      "held_force_fraction",
+      "seeking"
+    ],
+    "physics_timestep_s": 5e-05,
+    "actions": [
+      "pregrasp-to-closed target",
+      "5-to-45 percent FORCE"
+    ],
+    "episode_end": "finite_horizon_termination",
+    "reward": "2*clipped_lift_fraction + 0.15*bilateral_contact - 0.08*(FORCE/max_FORCE)^2 - 0.2*mean_step_torque_squared/max_command_torque_squared + 10*terminal_success",
+    "privileged_simulator_observations": true,
+    "prescribed_fixture_lift": true
+  },
+  "versions": {
+    "mujoco": "3.13.0",
+    "numpy": "2.5.3",
+    "gymnasium": "1.3.0",
+    "stable-baselines3": "2.9.0",
+    "torch": "2.14.0"
+  },
+  "training_curve_note": "Stochastic training episodes, not held-out evaluation."
+}

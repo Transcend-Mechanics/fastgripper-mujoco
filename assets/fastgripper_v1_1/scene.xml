@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="FastGripper v1.1 stock fingertip grasp demonstration">
+  <compiler angle="radian" inertiafromgeom="false" autolimits="true" />
+  <option timestep="5e-05" gravity="0 0 -9.81" integrator="implicitfast" solver="Newton" iterations="100" tolerance="1e-10" cone="elliptic" impratio="10" noslip_iterations="3" />
+  <include file="mechanism.xml" />
+  <statistic center="0 0 0.14" extent="0.36" />
+  <worldbody>
+    <body name="gripper_mount" pos="0.0275 0.00243382114975 0.19" quat="0 1 0 0" childclass="fastgripper">
+      <freejoint name="mount_free" />
+      <include file="body.xml" />
+    </body>
+    <body name="mount_target" mocap="true" pos="0.0275 0.00243382114975 0.19" quat="0 1 0 0" />
+    <geom name="table" type="box" pos="0 0 0.02" size="0.16 0.12 0.02" rgba="0.24 0.29 0.34 1" contype="4" conaffinity="3" group="0" friction="0.5 0.001 0.0001" />
+    <geom name="floor" type="plane" pos="0 0 0" size="0.5 0.5 0.01" rgba="0.12 0.16 0.21 1" contype="4" conaffinity="3" group="0" />
+    <body name="test_block" pos="0 0 0.055">
+      <freejoint name="block_free" />
+      <inertial mass="0.05" pos="0 0 0" diaginertia="6.15e-06 1.04166666667e-05 9.06666666667e-06" />
+      <geom name="test_block_collision" type="box" size="0.02 0.012 0.015" rgba="0.94 0.64 0.25 1" contype="2" conaffinity="5" group="0" friction="0.35 0.001 0.0001" condim="4" solref="0.004 1" solimp="0.95 0.99 0.001" />
+      <site name="object_center" size="0.001" group="3" />
+    </body>
+    <light name="key" pos="0.1 -0.2 0.6" dir="-0.2 0.4 -1" diffuse="0.8 0.8 0.8" />
+    <light name="fill" pos="-0.3 0.1 0.4" dir="1 -1 -1" diffuse="0.4 0.4 0.4" />
+  </worldbody>
+  <equality>
+    <weld name="fixture_weld" body1="mount_target" body2="gripper_mount" solref="0.002 1" solimp="0.9999 0.9999 0.001" />
+  </equality>
+  <keyframe>
+    <key name="open" qpos="0.0275 0.00243382114975 0.19 0 1 0 0 -3 0.15 -0.15 0.15 -0.15 0.15 -0.15 0 0 0.055 1 0 0 0" ctrl="0" mpos="0.0275 0.00243382114975 0.19" mquat="0 1 0 0" />
+  </keyframe>
+  <visual>
+    <global offwidth="1280" offheight="960" />
+    <headlight diffuse="0.65 0.65 0.65" ambient="0.35 0.35 0.35" specular="0.25 0.25 0.25" />
+    <quality shadowsize="2048" offsamples="4" />
+  </visual>
+</mujoco>

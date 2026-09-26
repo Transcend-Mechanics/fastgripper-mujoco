@@ -1,0 +1,66 @@
+name: Simulation and package checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  OMP_NUM_THREADS: '1'
+  OPENBLAS_NUM_THREADS: '1'
+
+jobs:
+  runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
+        with:
+          version: '0.10.7'
+          python-version: '3.12'
+          enable-cache: true
+      - run: uv sync --locked
+      - run: uv run --locked python -m fastgripper_sim.assets
+      - run: uv run --locked python -m fastgripper_sim.models --verify
+      - run: uv run --locked python scripts/verify_release_provenance.py
+      - run: uv run --locked pytest -q tests --ignore=tests/test_learning.py
+      - name: Build wheel and source distribution
+        run: |
+          uv build
+          uv run --locked python scripts/checksums.py
+      - name: Install the wheel and test outside the checkout
+        shell: bash
+        run: |
+          uv export --locked --no-dev --no-emit-project --no-hashes --output-file "$RUNNER_TEMP/runtime-requirements.txt"
+          uv venv --python 3.12 "$RUNNER_TEMP/wheel-venv"
+          uv pip install --python "$RUNNER_TEMP/wheel-venv/bin/python" -r "$RUNNER_TEMP/runtime-requirements.txt" dist/*.whl
+          cp scripts/wheel_smoke.py "$RUNNER_TEMP/wheel_smoke.py"
+          cd "$RUNNER_TEMP"
+          env -u PYTHONPATH "$RUNNER_TEMP/wheel-venv/bin/python" -I wheel_smoke.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: python-distributions
+          path: dist/*
+          if-no-files-found: error
+
+  learning:
+    # The locked macOS Torch wheel runs on CPU without downloading CUDA libraries.
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
+        with:
+          version: '0.10.7'
+          python-version: '3.12'
+          enable-cache: true
+      - run: uv sync --locked --extra learn
+      - run: uv run --locked --extra learn pytest -q tests/test_learning.py

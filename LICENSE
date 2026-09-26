@@ -1,0 +1,20 @@
+FastGripper distribution licensing
+Copyright (c) 2026 Transcend Mechanics, Inc.
+
+The distribution has separate licensing scopes:
+
+1. First-party Python source, tests, scripts, software documentation and build
+   configuration: MIT, as set out in LICENSE-CODE.
+2. Files under assets/fastgripper/ and assets/fastgripper_v1_1/: the FastGripper
+   Simulation and Accessory License in LICENSE-ASSETS and each asset's LICENSE. This includes
+   MJCF/XML, meshes and the asset's accompanying documentation and metadata.
+3. Files under assets/ur3e/ and assets/ur5e/: their original third-party licenses,
+   copied in those directories. Those licenses are not replaced by ours.
+4. First-party example recordings, telemetry and the retained policy checkpoint
+   under examples/: LICENSE-CODE. Referenced model assets retain their separate
+   license. Historical provenance records do not override current file licenses.
+
+LICENSE-CODE does not apply to the separately licensed asset directories.
+The overall distribution is not uniformly MIT-licensed or open-source hardware.
+No proprietary mechanical source drawings or manufacturing files are included.
+See docs/licensing.md for user permissions and scope.

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "status": "approved",
+  "license_choices_confirmed": true,
+  "package_version": "0.3.0",
+  "licensor": "Transcend Mechanics, Inc.",
+  "commercial_accessories": true,
+  "reason": "Owner selected the software/model licensing split, commercial compatible accessories and company identity, then authorized public commit/push.",
+  "approval_date": "2026-09-25",
+  "license_files_sha256": {
+    "LICENSE": "0a9fbfd8b56130e17c654c13e8c526dc180be9c9d74f3a1b441f0ebb2f4110d0",
+    "LICENSE-CODE": "d657573e020d11c71133e4780de77fb606fb673d1e9e6e1682b9e65bb1b5f08b",
+    "LICENSE-ASSETS": "a367b948c6fb263268a3db1f688d1c6aef228c97ea8a193b7c89c0e555df77b7",
+    "assets/fastgripper/LICENSE": "a367b948c6fb263268a3db1f688d1c6aef228c97ea8a193b7c89c0e555df77b7",
+    "assets/fastgripper_v1_1/LICENSE": "a367b948c6fb263268a3db1f688d1c6aef228c97ea8a193b7c89c0e555df77b7",
+    "docs/licensing.md": "e7c3a38143c3a7d48b8a35ada601bd485fa67cde464b43581b5a22c567a7f700"
+  }
+}

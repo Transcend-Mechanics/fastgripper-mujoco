@@ -1,0 +1,87 @@
+FastGripper Simulation and Accessory License — version 1.0
+Copyright (c) 2026 Transcend Mechanics, Inc. ("Licensor")
+
+This custom license is not an OSI-approved open-source license.
+
+1. Scope
+
+"Model Assets" means the FastGripper simulation files distributed under
+assets/fastgripper/ or assets/fastgripper_v1_1/, including meshes, MJCF/XML, parameter data and accompanying
+asset documentation. "Published Interfaces" means attachment information that
+Licensor expressly publishes for connecting compatible accessories to a
+FastGripper. Simulation dimensions alone are not a manufacturing specification.
+"Compatible Accessories" means separately designed fingertips, pads, mounts,
+adapters and attachments intended for use with a lawfully obtained FastGripper.
+It does not include a reproduction of the gripper's actuator, transmission,
+linkage, housing or core gripping mechanism.
+
+2. Simulation permission
+
+Subject to these terms, Licensor grants a worldwide, nonexclusive, royalty-free
+license under its applicable copyright rights to use, reproduce, modify,
+display and distribute the Model Assets and modified Model Assets for digital
+simulation, visualization, integration, research, education, evaluation, and
+machine-learning training or deployment, including commercial activities.
+You may incorporate them into commercial simulation environments and products.
+You must not use the Model Assets as fabrication or manufacturing source for
+reproducing the physical gripper or its core mechanism.
+
+3. Compatible accessories
+
+Licensor expressly permits you to use its Published Interfaces to design,
+make, have made, use, market, distribute and sell your own Compatible
+Accessories, including attachment to and use with a lawfully obtained
+FastGripper, for commercial or noncommercial purposes.
+To the extent necessary to exercise that permission, Licensor grants a
+worldwide, nonexclusive, royalty-free license under copyright and patent
+rights it controls that cover use of those Published Interfaces solely for
+Compatible Accessories. No license to third-party rights is granted.
+You retain rights in your original accessory design and are not required to
+publish its source or license it under these terms. This permission does not
+grant rights to reproduce the gripper's core mechanism. It also does not
+promise access to an unpublished interface or mechanical source files.
+
+4. Redistribution and attribution
+
+When redistributing Model Assets or modified Model Assets, include this license
+and the applicable copyright notices, identify modifications you made, and
+retain these terms for the Model Assets. Do not present modified assets as
+official or physically validated FastGripper models. These requirements do
+not require disclosure of your surrounding proprietary software or accessory
+designs. Third-party assets keep their own licenses.
+
+5. Outputs and retained rights
+
+Licensor claims no ownership of your trained policy weights, simulation
+measurements, screenshots, videos or other outputs solely because they were
+produced using the Model Assets. You may use and distribute such outputs
+commercially. Redistribution of embedded Model Asset files themselves remains
+subject to section 4. Your independently created code and accessory designs
+remain yours.
+
+The gripper mechanical design and unpublished source files remain proprietary.
+Except for the permissions expressly granted above, no patent, trademark or
+other intellectual-property rights are granted. Descriptive references to
+compatibility do not imply sponsorship or approval; this license does not
+grant rights to use Licensor's logos or represent accessories as official.
+Nothing here removes rights available to you independently under applicable
+law or a separate agreement. Keeping drawings private and protecting a
+mechanism under applicable law are separate from this file license.
+
+6. Conditions and termination
+
+These permissions continue while you comply with the applicable terms. If
+Licensor notifies you of a material breach and you do not cure it within
+30 days, the permissions granted to you by this license terminate. Termination
+does not revoke a compliant recipient's independent license from Licensor.
+
+7. No warranty; limitation of liability
+
+THE MODEL ASSETS AND PUBLISHED INTERFACES ARE PROVIDED "AS IS", WITHOUT
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY,
+HARDWARE PERFORMANCE OR NONINFRINGEMENT. SIMULATION RESULTS ARE NOT PHYSICAL
+LOAD, SAFETY OR PERFORMANCE RATINGS. TO THE MAXIMUM EXTENT PERMITTED BY LAW,
+LICENSOR IS NOT LIABLE FOR DAMAGES ARISING FROM USE OF THE MODEL ASSETS OR
+PUBLISHED INTERFACES. YOU ARE RESPONSIBLE FOR VALIDATING YOUR APPLICATIONS AND
+ACCESSORIES. NOTHING IN THIS SECTION EXCLUDES LIABILITY THAT CANNOT LAWFULLY
+BE EXCLUDED.

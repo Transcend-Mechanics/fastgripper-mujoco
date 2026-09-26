@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "model": "UR3e",
+  "repository": "UniversalRobots/Universal_Robots_ROS2_Description",
+  "commit": "89bbe795f38a7ab00fb66fe8831dfff79dc99edf",
+  "source_url": "https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/89bbe795f38a7ab00fb66fe8831dfff79dc99edf",
+  "license": "BSD-3-Clause",
+  "modifications": "Official UR3e URDF parameters converted to MJCF; DAE scene geometry converted to material-separated OBJ; collision STL unchanged with one adjacent base/shoulder exclusion; authored ideal bounded position servos.",
+  "upstream_files": {
+    "LICENSE": {
+      "git_blob_sha1": "574ef07902908574cba9a471d7e5eb0b684691e4",
+      "sha256": "143077f9f6a8de5a99f78c2c2472801fb53cf240277ef661642f079b9acdfff8"
+    },
+    "README.md": {
+      "git_blob_sha1": "f17170031ac0eb36e0a167119c60c8506f05580c",
+      "sha256": "627f8565e83a44102af73da8faadcb4d948bf24b4970d3dfae72dda8775ea750"
+    },
+    "config/ur3e/default_kinematics.yaml": {
+      "git_blob_sha1": "54d9c01b098d35c698761fcec8e08ac2a04478ce",
+      "sha256": "c0bfd5cb5bafd9df090a71a914bbeb8812a1a3b07f03fb930d6f8fa38fff9de7"
+    },
+    "config/ur3e/joint_limits.yaml": {
+      "git_blob_sha1": "f2449d98ff0b930b8f051817a0e076d7f5a6bd2e",
+      "sha256": "51f2e1d00f69154a49aca95c1f17497622861b1d14c2de5ace0a9687dc5424ca"
+    },
+    "config/ur3e/physical_parameters.yaml": {
+      "git_blob_sha1": "efd884c29479eb0ef6595ec912987fa310948479",
+      "sha256": "ee8e6db5d031bd7b4bc02d70edcbba4846036187d0ecaeb7b0bbc4d810f1e3ac"
+    },
+    "config/ur3e/visual_parameters.yaml": {
+      "git_blob_sha1": "d487c4fb81e69c0c806d210115befc21941e964a",
+      "sha256": "cc0abaa343555c577a374ccdae6aacfbf17cb9cdb526d57b50c8cc18475b4a86"
+    },
+    "meshes/ur3e/collision/base.stl": {
+      "git_blob_sha1": "4b5def39a010c83989e264051490479217e60ab3",
+      "sha256": "2838ae72d4b6f1421083209ebdd9ea5cecd3a19a9b3ca60f4e0ad3300beeb648"
+    },
+    "meshes/ur3e/collision/forearm.stl": {
+      "git_blob_sha1": "a8afd294a486f2da0166a8894f3fac55e5b27605",
+      "sha256": "cbb4b2d2f024d05af7dad9cbaf018a11a360693ca5b96d3de89ea7ff2480bfca"
+    },
+    "meshes/ur3e/collision/shoulder.stl": {
+      "git_blob_sha1": "0f5a6fa7d2fe41ebba1e8f2031b45ef9153d0cee",
+      "sha256": "2edd8898d06fd4dd289e27dae047598ec7fa61e1860682452b57ed70c0e836d6"
+    },
+    "meshes/ur3e/collision/upperarm.stl": {
+      "git_blob_sha1": "2025f26e367214ea3ffa64839273a18f4e151a41",
+      "sha256": "009baa2a00697891cdc191a3cd9d4eae9106ba09c6e78db8d509b1c84fbaa41f"
+    },
+    "meshes/ur3e/collision/wrist1.stl": {
+      "git_blob_sha1": "952eec1234dab6f6a27e3ee049bf62609bb02047",
+      "sha256": "458cbd3b36b0419e9fafd13bfd1f1cd9fd47e4c31191d6c078b239f220dcfd28"
+    },
+    "meshes/ur3e/collision/wrist2.stl": {
+      "git_blob_sha1": "bca2e9d254dedff4c5e385ad552e553fd89b4f40",
+      "sha256": "d2b00401f97d1a1d951a1a99c7dc74589009f80b6817d1c633cc793dcec083ad"
+    },
+    "meshes/ur3e/collision/wrist3.stl": {
+      "git_blob_sha1": "4895bee719351423471b9938025b9df86924f204",
+      "sha256": "0795382b1ff170be3ce66ab44da8f4f41fd08096661471801fc627712d9c592f"
+    },
+    "meshes/ur3e/visual/base.dae": {
+      "git_blob_sha1": "9fac628b832589e5b2841f493b63efc57d8abd35",
+      "sha256": "2392d48fd62ec9ab579702ef7548c303bcf2dd41fc895cb7f410d9d2bde5ab9e"
+    },
+    "meshes/ur3e/visual/forearm.dae": {
+      "git_blob_sha1": "978c6f454e9a84a8b8969729c85493f22d126515",
+      "sha256": "410cd4771845c9434139e1fe41a4171296f7115b7a82211ebfaefc90732811c1"
+    },
+    "meshes/ur3e/visual/shoulder.dae": {
+      "git_blob_sha1": "027a5accd69c896fa385337d75e3560339d428c2",
+      "sha256": "d047f6b253e3c5f295717818923bf337a7d2f2583395cb99a1e60b696b226191"
+    },
+    "meshes/ur3e/visual/upperarm.dae": {
+      "git_blob_sha1": "7eae8c034cbe4adc3022bb189eafbf841a82af4d",
+      "sha256": "c1b7280deb24b227903c1f5943b6d50221ef1aa30b92a0709abeb9d93852a879"
+    },
+    "meshes/ur3e/visual/wrist1.dae": {
+      "git_blob_sha1": "02301dec0d39e160765a42d7aa47e1ed1e5d91c7",
+      "sha256": "de8c42623011c04ab09626f8dfd7e2d07fe05ac04b0e92b765d9b7c924faaa7e"
+    },
+    "meshes/ur3e/visual/wrist2.dae": {
+      "git_blob_sha1": "1c46a2a0839264be21f2f239bf65770404ef931b",
+      "sha256": "e010c1d8c1802b150110782cc3ab993e51aeacaa096b871bd72ba8d46ea7b109"
+    },
+    "meshes/ur3e/visual/wrist3.dae": {
+      "git_blob_sha1": "bfcbb3d8ef6caac60269be1c163539f4291ecf8f",
+      "sha256": "2eec93dd08aa9380763bcb314851558602f015759afb43af9bb249eea0661ed5"
+    },
+    "urdf/inc/ur_common.xacro": {
+      "git_blob_sha1": "b5b46cf640f5c56558136de2847211fb525eb302",
+      "sha256": "91b5a8c55c3a0b04ff0d8abe74fbaf7635966e903e9e978cec473bf88234f9fd"
+    },
+    "urdf/ur_macro.xacro": {
+      "git_blob_sha1": "470507fd1a38a4faa4610589becc7cf5624e1513",
+      "sha256": "2683ddcc2db392116d69ac775e4d6dd1c7b3d420f9eca926bd10cf43a1ce8b35"
+    }
+  },
+  "kinematic_validation": {
+    "poses_checked": 25,
+    "max_position_error_m": 7.894497640785698e-16,
+    "max_rotation_matrix_error": 3.967785495386441e-15,
+    "max_inertia_error_kg_m2": 1.249000902703301e-16,
+    "home_initial_contacts": 0,
+    "dynamics_duration_s": 0.5000000000000003,
+    "dynamics_warning_count": 0,
+    "total_link_mass_kg": 10.7985,
+    "tested_mujoco_version": "3.13.0"
+  },
+  "files": {
+    "LICENSE": "143077f9f6a8de5a99f78c2c2472801fb53cf240277ef661642f079b9acdfff8",
+    "README.md": "4259f9fdd4141f8729014e5834d78db1687d48c46f6997d7cd838b64abdb12f8",
+    "UPSTREAM_README.md": "627f8565e83a44102af73da8faadcb4d948bf24b4970d3dfae72dda8775ea750",
+    "assets/base_collision.stl": "2838ae72d4b6f1421083209ebdd9ea5cecd3a19a9b3ca60f4e0ad3300beeb648",
+    "assets/forearm_collision.stl": "cbb4b2d2f024d05af7dad9cbaf018a11a360693ca5b96d3de89ea7ff2480bfca",
+    "assets/shoulder_collision.stl": "2edd8898d06fd4dd289e27dae047598ec7fa61e1860682452b57ed70c0e836d6",
+    "assets/upper_arm_collision.stl": "009baa2a00697891cdc191a3cd9d4eae9106ba09c6e78db8d509b1c84fbaa41f",
+    "assets/ur3e_base_visual_0.obj": "4a4d51169d903e808c98fd840cf763efb7d656106292f177c5d17581509258c5",
+    "assets/ur3e_base_visual_1.obj": "e7227a3efc849dcc673573c902845b3f3fb2357715a341b7ae4809e7ad1bc98d",
+    "assets/ur3e_forearm_visual_0.obj": "f5c4b7a43c9dbf48712330a9a9647dcbc538c6e38b11f68c76bffb052f016327",
+    "assets/ur3e_forearm_visual_1.obj": "f01062a4c143c30f0c9b0c402b3371579c530eee29d30521376a26b7550b68c4",
+    "assets/ur3e_forearm_visual_2.obj": "d433d67de939b4059b51546b7cd09113a135a455776aa0c5f14d11b4e05dfd21",
+    "assets/ur3e_forearm_visual_3.obj": "7ae4cfd1ae025f08f09253058ba1fccbb38d8c39172cdc5b92d5dff6e85644ce",
+    "assets/ur3e_shoulder_visual_0.obj": "4db21a29dc18300723fc150a209d4c87b6d3f68043b184ce554651489c288a68",
+    "assets/ur3e_shoulder_visual_1.obj": "c937cc128b9a2fb6ce648e2733fde58d2e6c18748a952212b4bb193ebad182a3",
+    "assets/ur3e_shoulder_visual_2.obj": "36785324c11ea2dfda020082c4bf744f5c805b4c1b8405d565e67a7198e83669",
+    "assets/ur3e_upper_arm_visual_0.obj": "fa89eef9af4edf90111a0e78f00719f748710a1e8d6d683305cc71872765c1d2",
+    "assets/ur3e_upper_arm_visual_1.obj": "881ad28a2a6882e6371046bc78e802ecd52c564564149858c8a0beed435333ea",
+    "assets/ur3e_upper_arm_visual_2.obj": "ad2e6f3cd6693247be296353124683cfe224507034345e6423a0783fa82a3181",
+    "assets/ur3e_upper_arm_visual_3.obj": "69e32236d7b6b4763841be4231fce460406cd7d2ada9da456ec4f8818a2288d7",
+    "assets/ur3e_wrist_1_visual_0.obj": "f119460930b86c6f35a6fd08bdaeb507f99e1e7ddd432affc165ff04457bf29d",
+    "assets/ur3e_wrist_1_visual_1.obj": "9b1a09a7ddc2f815ef14c4ff6ee349d6e5409645156951d60cfc341f1d8d0ffc",
+    "assets/ur3e_wrist_1_visual_2.obj": "774e8c3261f8d3933e352412a535dd8bb82377a81c7e684159ff0504b7577135",
+    "assets/ur3e_wrist_2_visual_0.obj": "50965392bdfebccb9205e76c05986a6c02fda1f07845cd6f2f31c9e21980673e",
+    "assets/ur3e_wrist_2_visual_1.obj": "9392c9f61f840a55a93758a85fc44596ba4fe54bdbbb022f8e7f29e4f90ba38e",
+    "assets/ur3e_wrist_2_visual_2.obj": "eb3914fdb6b4417bc46975fccb3a364035df1c155786aee2032341b852da99b1",
+    "assets/ur3e_wrist_3_visual_0.obj": "6063c0bc53501487a6cc52bf3df1f0ad64d61cb087215cf2d86b64bf0db9cba6",
+    "assets/wrist_1_collision.stl": "458cbd3b36b0419e9fafd13bfd1f1cd9fd47e4c31191d6c078b239f220dcfd28",
+    "assets/wrist_2_collision.stl": "d2b00401f97d1a1d951a1a99c7dc74589009f80b6817d1c633cc793dcec083ad",
+    "assets/wrist_3_collision.stl": "0795382b1ff170be3ce66ab44da8f4f41fd08096661471801fc627712d9c592f",
+    "scene.xml": "f3ad755fd828f87608af209f31a16eeafd3b97afa5375c3c90ac12d38b06a46c",
+    "source_parameters.json": "07b6ade1eb5729a2495cfb73659c1f7e9c7fc23becbde047a15fbbd5f3ffd22e",
+    "ur3e.xml": "e9c45d6160152b724c3deb2e955af0333ab19a638d6642434325d92a710a01f7",
+    "validation.json": "5aa429c86cd356970288e7f17a5c77060b0970c31334cfb2e353534e0e26380e"
+  }
+}

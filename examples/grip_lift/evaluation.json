@@ -1,0 +1,1274 @@
+{
+  "checkpoint": "policy.zip",
+  "checkpoint_sha256": "8a0f9f0034f65e8005fced70f42c6cdbf8761735c646a30c4c2273926b675001",
+  "model_reference": "assets/fastgripper/scene.xml",
+  "model_xml_sha256": "ec86ba7b67ecf25511dad6c4893b8cb1f47e314bc032656d4e41050a77eb1cd6",
+  "runtime_source_sha256": {
+    "env.py": "f728a2cd0a4eb51c87aa8b48f8c238212edb3ad9eb104d28f68643b915e67c2f",
+    "controller.py": "3c2fccf5da6c8314a2f5a6b40b2eb915005e1fb00e17cb268ebfe1ccb4d69c3a",
+    "fixture.py": "10e0f91dac5f27f5f5c49fa61aa85aa3028bbd4eb26ae5b881013fa2d25643bf"
+  },
+  "asset_manifest_sha256": "8107307222cfec8b83ac621347219193712d23fe3f48195b45e92c8bd09fbed6",
+  "created_utc": "2026-09-18T18:09:32.454080+00:00",
+  "versions": {
+    "mujoco": "3.13.0",
+    "numpy": "2.5.3",
+    "gymnasium": "1.3.0",
+    "stable-baselines3": "2.9.0",
+    "torch": "2.14.0"
+  },
+  "first_seed": 10000,
+  "episodes_per_policy": 16,
+  "environment": {
+    "task": "grip-lift-hold",
+    "config": {
+      "policy_hz": 20,
+      "close_seconds": 0.8,
+      "lift_seconds": 0.6,
+      "hold_seconds": 0.8,
+      "lift_m": 0.05,
+      "success_height_m": 0.045,
+      "success_hold_seconds": 0.5,
+      "pregrasp_driver_rad": -0.23,
+      "min_force_pct": 5.0,
+      "max_force_pct": 45.0,
+      "min_mass_kg": 0.03,
+      "max_mass_kg": 0.07,
+      "min_friction": 0.25,
+      "max_friction": 0.45
+    },
+    "observations": [
+      "phase_fraction",
+      "aperture_m/0.1",
+      "motor_angle_rad/12",
+      "motor_velocity_rad_s/4",
+      "motor_torque_nm/1.5",
+      "block_lift_m/0.05",
+      "block_vertical_velocity_m_s/0.2",
+      "fixture_lift_m/0.05",
+      "positive_normal_n/30",
+      "negative_normal_n/30",
+      "mass_kg/0.1",
+      "friction",
+      "held_target_fraction",
+      "held_force_fraction",
+      "seeking"
+    ],
+    "physics_timestep_s": 5e-05,
+    "actions": [
+      "pregrasp-to-closed target",
+      "5-to-45 percent FORCE"
+    ],
+    "episode_end": "finite_horizon_termination",
+    "reward": "2*clipped_lift_fraction + 0.15*bilateral_contact - 0.08*(FORCE/max_FORCE)^2 - 0.2*mean_step_torque_squared/max_command_torque_squared + 10*terminal_success",
+    "privileged_simulator_observations": true,
+    "prescribed_fixture_lift": true
+  },
+  "policies": {
+    "sac": {
+      "summary": {
+        "episodes": 16,
+        "successes": 16,
+        "success_rate": 1.0,
+        "mean_return": 58.44866717601366,
+        "mean_force_pct": 19.28125,
+        "mean_torque_squared_integral_nm2_s": 0.1393858433297761,
+        "mean_final_object_lift_m": 0.04995022500866972
+      },
+      "episodes": [
+        {
+          "seed": 10000,
+          "return": 58.55306270949625,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.049952420649053454,
+          "mass_kg": 0.0506676160932185,
+          "friction": 0.33473983050328615,
+          "mean_force_pct": 18.818181818181817,
+          "torque_squared_integral_nm2_s": 0.12877605104901108,
+          "commands_issued": 27,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.55306270949625,
+            "l": 44
+          },
+          "wall_seconds": 1.5446641250164248
+        },
+        {
+          "seed": 10001,
+          "return": 58.56282966332104,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.049955144969284264,
+          "mass_kg": 0.0585922569264586,
+          "friction": 0.3758940466243195,
+          "mean_force_pct": 18.636363636363637,
+          "torque_squared_integral_nm2_s": 0.13040101159410186,
+          "commands_issued": 25,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.56282966332104,
+            "l": 44
+          },
+          "wall_seconds": 1.5516884590033442
+        },
+        {
+          "seed": 10002,
+          "return": 58.431892729463655,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.049950203178132736,
+          "mass_kg": 0.05540743597717397,
+          "friction": 0.3000029936911759,
+          "mean_force_pct": 19.181818181818183,
+          "torque_squared_integral_nm2_s": 0.13944811094500545,
+          "commands_issued": 27,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.431892729463655,
+            "l": 44
+          },
+          "wall_seconds": 1.5544435000047088
+        },
+        {
+          "seed": 10003,
+          "return": 58.583101273153886,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.04995486550831437,
+          "mass_kg": 0.0575264746259706,
+          "friction": 0.3976248549027357,
+          "mean_force_pct": 18.545454545454547,
+          "torque_squared_integral_nm2_s": 0.12873457999461477,
+          "commands_issued": 27,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.583101273153886,
+            "l": 44
+          },
+          "wall_seconds": 1.5281274160079192
+        },
+        {
+          "seed": 10004,
+          "return": 58.501874123516075,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.04995335991994957,
+          "mass_kg": 0.06357610594855269,
+          "friction": 0.31040331070340127,
+          "mean_force_pct": 19.5,
+          "torque_squared_integral_nm2_s": 0.14718519550732465,
+          "commands_issued": 28,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.501874123516075,
+            "l": 44
+          },
+          "wall_seconds": 1.5461756250006147
+        },
+        {
+          "seed": 10005,
+          "return": 58.29969857919844,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.049945938215267056,
+          "mass_kg": 0.038451148805537426,
+          "friction": 0.31566765319719775,
+          "mean_force_pct": 19.818181818181817,
+          "torque_squared_integral_nm2_s": 0.14940524752634693,
+          "commands_issued": 29,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.29969857919844,
+            "l": 44
+          },
+          "wall_seconds": 1.5579112909908872
+        },
+        {
+          "seed": 10006,
+          "return": 58.40929471037784,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.04994136422648373,
+          "mass_kg": 0.03558321315199568,
+          "friction": 0.3932584318244476,
+          "mean_force_pct": 19.5,
+          "torque_squared_integral_nm2_s": 0.14000260361450453,
+          "commands_issued": 25,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.40929471037784,
+            "l": 44
+          },
+          "wall_seconds": 1.5471376250206959
+        },
+        {
+          "seed": 10007,
+          "return": 58.40074472122773,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.04995543002860945,
+          "mass_kg": 0.06293211043020706,
+          "friction": 0.2603995154900456,
+          "mean_force_pct": 20.0,
+          "torque_squared_integral_nm2_s": 0.15550551389949802,
+          "commands_issued": 30,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.40074472122773,
+            "l": 44
+          },
+          "wall_seconds": 1.5535204999905545
+        },
+        {
+          "seed": 10008,
+          "return": 58.40037446531991,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.04995612647135227,
+          "mass_kg": 0.0530557231368033,
+          "friction": 0.3403694905876098,
+          "mean_force_pct": 19.454545454545453,
+          "torque_squared_integral_nm2_s": 0.14203330499964323,
+          "commands_issued": 26,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.40037446531991,
+            "l": 44
+          },
+          "wall_seconds": 1.5550325420044828
+        },
+        {
+          "seed": 10009,
+          "return": 58.46232321308693,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.04995087225197522,
+          "mass_kg": 0.050893589116597235,
+          "friction": 0.36223687452016756,
+          "mean_force_pct": 19.227272727272727,
+          "torque_squared_integral_nm2_s": 0.13633940447951384,
+          "commands_issued": 27,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.46232321308693,
+            "l": 44
+          },
+          "wall_seconds": 1.577972208004212
+        },
+        {
+          "seed": 10010,
+          "return": 58.29122462941788,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.04994636303902306,
+          "mass_kg": 0.03503471810036441,
+          "friction": 0.2582861257795144,
+          "mean_force_pct": 19.90909090909091,
+          "torque_squared_integral_nm2_s": 0.1491206053857519,
+          "commands_issued": 26,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.29122462941788,
+            "l": 44
+          },
+          "wall_seconds": 1.561689916998148
+        },
+        {
+          "seed": 10011,
+          "return": 58.60602246783307,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.04995035546714698,
+          "mass_kg": 0.04996756759222621,
+          "friction": 0.4233326675184436,
+          "mean_force_pct": 18.5,
+          "torque_squared_integral_nm2_s": 0.12540578521675183,
+          "commands_issued": 29,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.60602246783307,
+            "l": 44
+          },
+          "wall_seconds": 1.5566827089933213
+        },
+        {
+          "seed": 10012,
+          "return": 58.20775899127398,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.049942008774376594,
+          "mass_kg": 0.03366526742027158,
+          "friction": 0.28991529230498014,
+          "mean_force_pct": 20.227272727272727,
+          "torque_squared_integral_nm2_s": 0.15616381938573107,
+          "commands_issued": 26,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.20775899127398,
+            "l": 44
+          },
+          "wall_seconds": 1.5963532500027213
+        },
+        {
+          "seed": 10013,
+          "return": 58.45376571756765,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.049952351367297705,
+          "mass_kg": 0.04774962794472939,
+          "friction": 0.36358953446956344,
+          "mean_force_pct": 19.272727272727273,
+          "torque_squared_integral_nm2_s": 0.13702031668301717,
+          "commands_issued": 27,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.45376571756765,
+            "l": 44
+          },
+          "wall_seconds": 1.572138540999731
+        },
+        {
+          "seed": 10014,
+          "return": 58.665505147625815,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.04994560669868308,
+          "mass_kg": 0.03501568041937267,
+          "friction": 0.423832646599369,
+          "mean_force_pct": 18.318181818181817,
+          "torque_squared_integral_nm2_s": 0.11866367020132473,
+          "commands_issued": 26,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.665505147625815,
+            "l": 44
+          },
+          "wall_seconds": 1.5758113330230117
+        },
+        {
+          "seed": 10015,
+          "return": 58.34920167433841,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.049951189373766004,
+          "mass_kg": 0.04932838670787919,
+          "friction": 0.3117152781203927,
+          "mean_force_pct": 19.59090909090909,
+          "torque_squared_integral_nm2_s": 0.1459682727942766,
+          "commands_issued": 29,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.34920167433841,
+            "l": 44
+          },
+          "wall_seconds": 1.5558182079985272
+        }
+      ]
+    },
+    "scripted_30pct": {
+      "summary": {
+        "episodes": 16,
+        "successes": 16,
+        "success_rate": 1.0,
+        "mean_return": 58.55210083741763,
+        "mean_force_pct": 30.0,
+        "mean_torque_squared_integral_nm2_s": 0.04583834206608202,
+        "mean_final_object_lift_m": 0.049964550666252716
+      },
+      "episodes": [
+        {
+          "seed": 10000,
+          "return": 58.55983297837728,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.04996522655099652,
+          "mass_kg": 0.0506676160932185,
+          "friction": 0.33473983050328615,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 0.045078104294898835,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.55983297837728,
+            "l": 44
+          },
+          "wall_seconds": 1.6752487079938874
+        },
+        {
+          "seed": 10001,
+          "return": 58.56403497327815,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.049966377675726224,
+          "mass_kg": 0.0585922569264586,
+          "friction": 0.3758940466243195,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 0.04477274723689732,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.56403497327815,
+            "l": 44
+          },
+          "wall_seconds": 1.60867016701377
+        },
+        {
+          "seed": 10002,
+          "return": 58.56246678789899,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.04996593823864997,
+          "mass_kg": 0.05540743597717397,
+          "friction": 0.3000029936911759,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 0.04488725161931253,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.56246678789899,
+            "l": 44
+          },
+          "wall_seconds": 1.614217041991651
+        },
+        {
+          "seed": 10003,
+          "return": 58.56351549246921,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.0499662363909753,
+          "mass_kg": 0.0575264746259706,
+          "friction": 0.3976248549027357,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 0.04481134171847007,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.56351549246921,
+            "l": 44
+          },
+          "wall_seconds": 1.5880102909868583
+        },
+        {
+          "seed": 10004,
+          "return": 58.56652802933173,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.04996697372196785,
+          "mass_kg": 0.06357610594855269,
+          "friction": 0.31040331070340127,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 0.04457514077182824,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.56652802933173,
+            "l": 44
+          },
+          "wall_seconds": 1.6151820000086445
+        },
+        {
+          "seed": 10005,
+          "return": 58.533272076763666,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.04996270495955626,
+          "mass_kg": 0.038451148805537426,
+          "friction": 0.31566765319719775,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 0.047682623983468904,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.533272076763666,
+            "l": 44
+          },
+          "wall_seconds": 1.627339041995583
+        },
+        {
+          "seed": 10006,
+          "return": 58.530675328727405,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.049961859656200876,
+          "mass_kg": 0.03558321315199568,
+          "friction": 0.3932584318244476,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 0.047836094009233436,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.530675328727405,
+            "l": 44
+          },
+          "wall_seconds": 1.5773644580040127
+        },
+        {
+          "seed": 10007,
+          "return": 58.56604591192382,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.0499667634346024,
+          "mass_kg": 0.06293211043020706,
+          "friction": 0.2603995154900456,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 0.044602019774743276,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.56604591192382,
+            "l": 44
+          },
+          "wall_seconds": 1.6124330419988837
+        },
+        {
+          "seed": 10008,
+          "return": 58.561665833576726,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.04996602966442002,
+          "mass_kg": 0.0530557231368033,
+          "friction": 0.3403694905876098,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 0.04498360652125702,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.561665833576726,
+            "l": 44
+          },
+          "wall_seconds": 1.640531875018496
+        },
+        {
+          "seed": 10009,
+          "return": 58.559963811295844,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.04996526189810744,
+          "mass_kg": 0.050893589116597235,
+          "friction": 0.36223687452016756,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 0.04506881666000544,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.559963811295844,
+            "l": 44
+          },
+          "wall_seconds": 1.608023292006692
+        },
+        {
+          "seed": 10010,
+          "return": 58.53016468183601,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.049961682326280406,
+          "mass_kg": 0.03503471810036441,
+          "friction": 0.2582861257795144,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 0.04786425531176827,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.53016468183601,
+            "l": 44
+          },
+          "wall_seconds": 1.6117638330033515
+        },
+        {
+          "seed": 10011,
+          "return": 58.55941070474058,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.04996511525482727,
+          "mass_kg": 0.04996756759222621,
+          "friction": 0.4233326675184436,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 0.04510847584563528,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.55941070474058,
+            "l": 44
+          },
+          "wall_seconds": 1.5947053339914419
+        },
+        {
+          "seed": 10012,
+          "return": 58.528821511115886,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.0499612136226758,
+          "mass_kg": 0.03366526742027158,
+          "friction": 0.28991529230498014,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 0.0479377955563783,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.528821511115886,
+            "l": 44
+          },
+          "wall_seconds": 1.5818819169944618
+        },
+        {
+          "seed": 10013,
+          "return": 58.558038269542706,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.049964740567347836,
+          "mass_kg": 0.04774962794472939,
+          "friction": 0.36358953446956344,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 0.04520483272744876,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.558038269542706,
+            "l": 44
+          },
+          "wall_seconds": 1.6362282909976784
+        },
+        {
+          "seed": 10014,
+          "return": 58.53014682810041,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.049961676063382206,
+          "mass_kg": 0.03501568041937267,
+          "friction": 0.423832646599369,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 0.04786522903577227,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.53014682810041,
+            "l": 44
+          },
+          "wall_seconds": 1.5741106249915902
+        },
+        {
+          "seed": 10015,
+          "return": 58.559030179703754,
+          "is_success": true,
+          "held_seconds": 0.8500000000000002,
+          "object_lift_m": 0.04996501063432717,
+          "mass_kg": 0.04932838670787919,
+          "friction": 0.3117152781203927,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 0.045135137990194425,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": 58.559030179703754,
+            "l": 44
+          },
+          "wall_seconds": 1.6479411250038538
+        }
+      ]
+    },
+    "open_jaws": {
+      "summary": {
+        "episodes": 16,
+        "successes": 0,
+        "success_rate": 0.0,
+        "mean_return": -1.5644444444444445,
+        "mean_force_pct": 30.0,
+        "mean_torque_squared_integral_nm2_s": 9.547370930208733e-20,
+        "mean_final_object_lift_m": -2.909242593678637e-05
+      },
+      "episodes": [
+        {
+          "seed": 10000,
+          "return": -1.5644444444444445,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.909242593677336e-05,
+          "mass_kg": 0.0506676160932185,
+          "friction": 0.33473983050328615,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 9.547370929281244e-20,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -1.5644444444444445,
+            "l": 44
+          },
+          "wall_seconds": 0.9778979170077946
+        },
+        {
+          "seed": 10001,
+          "return": -1.5644444444444445,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.909242593677336e-05,
+          "mass_kg": 0.0585922569264586,
+          "friction": 0.3758940466243195,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 9.547370927919896e-20,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -1.5644444444444445,
+            "l": 44
+          },
+          "wall_seconds": 0.9781008750142064
+        },
+        {
+          "seed": 10002,
+          "return": -1.5644444444444445,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.9092425936780297e-05,
+          "mass_kg": 0.05540743597717397,
+          "friction": 0.3000029936911759,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 9.547370929474124e-20,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -1.5644444444444445,
+            "l": 44
+          },
+          "wall_seconds": 1.265918082994176
+        },
+        {
+          "seed": 10003,
+          "return": -1.5644444444444445,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.909242593677336e-05,
+          "mass_kg": 0.0575264746259706,
+          "friction": 0.3976248549027357,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 9.547370929474124e-20,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -1.5644444444444445,
+            "l": 44
+          },
+          "wall_seconds": 1.1731804579903837
+        },
+        {
+          "seed": 10004,
+          "return": -1.5644444444444445,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.909242593677336e-05,
+          "mass_kg": 0.06357610594855269,
+          "friction": 0.31040331070340127,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 9.54737093258471e-20,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -1.5644444444444445,
+            "l": 44
+          },
+          "wall_seconds": 1.224099750019377
+        },
+        {
+          "seed": 10005,
+          "return": -1.5644444444444445,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.9092425936842747e-05,
+          "mass_kg": 0.038451148805537426,
+          "friction": 0.31566765319719775,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 9.547370930776555e-20,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -1.5644444444444445,
+            "l": 44
+          },
+          "wall_seconds": 1.150922333006747
+        },
+        {
+          "seed": 10006,
+          "return": -1.5644444444444445,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.909242593677336e-05,
+          "mass_kg": 0.03558321315199568,
+          "friction": 0.3932584318244476,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 9.547370930776555e-20,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -1.5644444444444445,
+            "l": 44
+          },
+          "wall_seconds": 1.6423424999811687
+        },
+        {
+          "seed": 10007,
+          "return": -1.5644444444444445,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.909242593675948e-05,
+          "mass_kg": 0.06293211043020706,
+          "friction": 0.2603995154900456,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 9.54737093258471e-20,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -1.5644444444444445,
+            "l": 44
+          },
+          "wall_seconds": 1.4514182500133757
+        },
+        {
+          "seed": 10008,
+          "return": -1.5644444444444445,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.9092425936856625e-05,
+          "mass_kg": 0.0530557231368033,
+          "friction": 0.3403694905876098,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 9.547370929474124e-20,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -1.5644444444444445,
+            "l": 44
+          },
+          "wall_seconds": 1.4188664589892142
+        },
+        {
+          "seed": 10009,
+          "return": -1.5644444444444445,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.9092425936780297e-05,
+          "mass_kg": 0.050893589116597235,
+          "friction": 0.36223687452016756,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 9.547370929281244e-20,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -1.5644444444444445,
+            "l": 44
+          },
+          "wall_seconds": 1.486907666985644
+        },
+        {
+          "seed": 10010,
+          "return": -1.5644444444444445,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.9092425936752542e-05,
+          "mass_kg": 0.03503471810036441,
+          "friction": 0.2582861257795144,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 9.547370930776555e-20,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -1.5644444444444445,
+            "l": 44
+          },
+          "wall_seconds": 1.5541663340118248
+        },
+        {
+          "seed": 10011,
+          "return": -1.5644444444444445,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.9092425936787236e-05,
+          "mass_kg": 0.04996756759222621,
+          "friction": 0.4233326675184436,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 9.547370929281244e-20,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -1.5644444444444445,
+            "l": 44
+          },
+          "wall_seconds": 1.279502791003324
+        },
+        {
+          "seed": 10012,
+          "return": -1.5644444444444445,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.9092425936856625e-05,
+          "mass_kg": 0.03366526742027158,
+          "friction": 0.28991529230498014,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 9.547370932315593e-20,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -1.5644444444444445,
+            "l": 44
+          },
+          "wall_seconds": 1.768170208990341
+        },
+        {
+          "seed": 10013,
+          "return": -1.5644444444444445,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.909242593676642e-05,
+          "mass_kg": 0.04774962794472939,
+          "friction": 0.36358953446956344,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 9.547370929281244e-20,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -1.5644444444444445,
+            "l": 44
+          },
+          "wall_seconds": 1.461668958014343
+        },
+        {
+          "seed": 10014,
+          "return": -1.5644444444444445,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.909242593677336e-05,
+          "mass_kg": 0.03501568041937267,
+          "friction": 0.423832646599369,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 9.547370930776555e-20,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -1.5644444444444445,
+            "l": 44
+          },
+          "wall_seconds": 1.3957463330007158
+        },
+        {
+          "seed": 10015,
+          "return": -1.5644444444444445,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.909242593675948e-05,
+          "mass_kg": 0.04932838670787919,
+          "friction": 0.3117152781203927,
+          "mean_force_pct": 30.0,
+          "torque_squared_integral_nm2_s": 9.547370929281244e-20,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -1.5644444444444445,
+            "l": 44
+          },
+          "wall_seconds": 1.4752237909997348
+        }
+      ]
+    },
+    "insufficient_5pct": {
+      "summary": {
+        "episodes": 16,
+        "successes": 0,
+        "success_rate": 0.0,
+        "mean_return": -0.05177420278544858,
+        "mean_force_pct": 5.0,
+        "mean_torque_squared_integral_nm2_s": 0.0009474052860299948,
+        "mean_final_object_lift_m": -2.909242593678637e-05
+      },
+      "episodes": [
+        {
+          "seed": 10000,
+          "return": -0.05177420278544858,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.909242593677336e-05,
+          "mass_kg": 0.0506676160932185,
+          "friction": 0.33473983050328615,
+          "mean_force_pct": 5.0,
+          "torque_squared_integral_nm2_s": 0.0009474052860299948,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -0.05177420278544858,
+            "l": 44
+          },
+          "wall_seconds": 1.3646396250114776
+        },
+        {
+          "seed": 10001,
+          "return": -0.05177420278544858,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.909242593677336e-05,
+          "mass_kg": 0.0585922569264586,
+          "friction": 0.3758940466243195,
+          "mean_force_pct": 5.0,
+          "torque_squared_integral_nm2_s": 0.0009474052860299948,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -0.05177420278544858,
+            "l": 44
+          },
+          "wall_seconds": 1.5232152910029981
+        },
+        {
+          "seed": 10002,
+          "return": -0.05177420278544858,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.9092425936780297e-05,
+          "mass_kg": 0.05540743597717397,
+          "friction": 0.3000029936911759,
+          "mean_force_pct": 5.0,
+          "torque_squared_integral_nm2_s": 0.0009474052860299948,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -0.05177420278544858,
+            "l": 44
+          },
+          "wall_seconds": 1.4523987919965293
+        },
+        {
+          "seed": 10003,
+          "return": -0.05177420278544858,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.909242593677336e-05,
+          "mass_kg": 0.0575264746259706,
+          "friction": 0.3976248549027357,
+          "mean_force_pct": 5.0,
+          "torque_squared_integral_nm2_s": 0.0009474052860299948,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -0.05177420278544858,
+            "l": 44
+          },
+          "wall_seconds": 1.2501383750059176
+        },
+        {
+          "seed": 10004,
+          "return": -0.05177420278544858,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.909242593677336e-05,
+          "mass_kg": 0.06357610594855269,
+          "friction": 0.31040331070340127,
+          "mean_force_pct": 5.0,
+          "torque_squared_integral_nm2_s": 0.0009474052860299948,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -0.05177420278544858,
+            "l": 44
+          },
+          "wall_seconds": 1.1695988750143442
+        },
+        {
+          "seed": 10005,
+          "return": -0.05177420278544858,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.9092425936842747e-05,
+          "mass_kg": 0.038451148805537426,
+          "friction": 0.31566765319719775,
+          "mean_force_pct": 5.0,
+          "torque_squared_integral_nm2_s": 0.0009474052860299948,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -0.05177420278544858,
+            "l": 44
+          },
+          "wall_seconds": 1.103217665979173
+        },
+        {
+          "seed": 10006,
+          "return": -0.05177420278544858,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.909242593677336e-05,
+          "mass_kg": 0.03558321315199568,
+          "friction": 0.3932584318244476,
+          "mean_force_pct": 5.0,
+          "torque_squared_integral_nm2_s": 0.0009474052860299948,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -0.05177420278544858,
+            "l": 44
+          },
+          "wall_seconds": 1.0850251659867354
+        },
+        {
+          "seed": 10007,
+          "return": -0.05177420278544858,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.909242593675948e-05,
+          "mass_kg": 0.06293211043020706,
+          "friction": 0.2603995154900456,
+          "mean_force_pct": 5.0,
+          "torque_squared_integral_nm2_s": 0.0009474052860299948,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -0.05177420278544858,
+            "l": 44
+          },
+          "wall_seconds": 1.0752690840163268
+        },
+        {
+          "seed": 10008,
+          "return": -0.05177420278544858,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.9092425936856625e-05,
+          "mass_kg": 0.0530557231368033,
+          "friction": 0.3403694905876098,
+          "mean_force_pct": 5.0,
+          "torque_squared_integral_nm2_s": 0.0009474052860299948,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -0.05177420278544858,
+            "l": 44
+          },
+          "wall_seconds": 1.1329024590086192
+        },
+        {
+          "seed": 10009,
+          "return": -0.05177420278544858,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.9092425936780297e-05,
+          "mass_kg": 0.050893589116597235,
+          "friction": 0.36223687452016756,
+          "mean_force_pct": 5.0,
+          "torque_squared_integral_nm2_s": 0.0009474052860299948,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -0.05177420278544858,
+            "l": 44
+          },
+          "wall_seconds": 1.1296739999961574
+        },
+        {
+          "seed": 10010,
+          "return": -0.05177420278544858,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.9092425936752542e-05,
+          "mass_kg": 0.03503471810036441,
+          "friction": 0.2582861257795144,
+          "mean_force_pct": 5.0,
+          "torque_squared_integral_nm2_s": 0.0009474052860299948,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -0.05177420278544858,
+            "l": 44
+          },
+          "wall_seconds": 1.190766584011726
+        },
+        {
+          "seed": 10011,
+          "return": -0.05177420278544858,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.9092425936787236e-05,
+          "mass_kg": 0.04996756759222621,
+          "friction": 0.4233326675184436,
+          "mean_force_pct": 5.0,
+          "torque_squared_integral_nm2_s": 0.0009474052860299948,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -0.05177420278544858,
+            "l": 44
+          },
+          "wall_seconds": 1.0238794579927344
+        },
+        {
+          "seed": 10012,
+          "return": -0.05177420278544858,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.9092425936856625e-05,
+          "mass_kg": 0.03366526742027158,
+          "friction": 0.28991529230498014,
+          "mean_force_pct": 5.0,
+          "torque_squared_integral_nm2_s": 0.0009474052860299948,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -0.05177420278544858,
+            "l": 44
+          },
+          "wall_seconds": 1.134496874990873
+        },
+        {
+          "seed": 10013,
+          "return": -0.05177420278544858,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.909242593676642e-05,
+          "mass_kg": 0.04774962794472939,
+          "friction": 0.36358953446956344,
+          "mean_force_pct": 5.0,
+          "torque_squared_integral_nm2_s": 0.0009474052860299948,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -0.05177420278544858,
+            "l": 44
+          },
+          "wall_seconds": 1.3244072910165414
+        },
+        {
+          "seed": 10014,
+          "return": -0.05177420278544858,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.909242593677336e-05,
+          "mass_kg": 0.03501568041937267,
+          "friction": 0.423832646599369,
+          "mean_force_pct": 5.0,
+          "torque_squared_integral_nm2_s": 0.0009474052860299948,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -0.05177420278544858,
+            "l": 44
+          },
+          "wall_seconds": 1.0454380419978406
+        },
+        {
+          "seed": 10015,
+          "return": -0.05177420278544858,
+          "is_success": false,
+          "held_seconds": 0.0,
+          "object_lift_m": -2.909242593675948e-05,
+          "mass_kg": 0.04932838670787919,
+          "friction": 0.3117152781203927,
+          "mean_force_pct": 5.0,
+          "torque_squared_integral_nm2_s": 0.0009474052860299948,
+          "commands_issued": 1,
+          "simulation_seconds": 2.200000000001542,
+          "episode": {
+            "r": -0.05177420278544858,
+            "l": 44
+          },
+          "wall_seconds": 1.3438812920066994
+        }
+      ]
+    }
+  },
+  "interpretation": "Held-out simulator seeds within the training parameter ranges; no hardware or out-of-distribution claim. The scripted baseline is intentionally strong. Failure controls verify that success depends on a physical grasp."
+}
