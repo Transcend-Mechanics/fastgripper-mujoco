@@ -88,7 +88,7 @@ def test_variant_report_records_the_actual_model_and_tip(tmp_path, monkeypatch):
     assert result["tip"] == "stock-metal"
     info = result["model_selection"]
     assert info["asset_directory"] == "fastgripper_v1_1"
-    assert info["asset_version"] == "0.1.0"
+    assert info["asset_version"] == "0.3.0"
     assert info["entrypoint"] == "scene.xml"
     assert len(info["manifest_sha256"]) == len(info["model_xml_sha256"]) == 64
     assert json.loads(output.with_suffix(".json").read_text()) == result

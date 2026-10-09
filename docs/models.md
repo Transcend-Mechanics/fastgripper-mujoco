@@ -1,6 +1,6 @@
 # Select hardware and fingertips
 
-Package 0.3.0 adds an explicit model selector. Existing examples, the learning
+The package includes an explicit model selector. Existing examples, the learning
 environment and the bundled policy continue to use hardware **v1.0** by default.
 
 | Hardware | Asset folder | Fingertip choice | Scope |
@@ -8,7 +8,13 @@ environment and the bundled policy continue to use hardware **v1.0** by default.
 | `v1.0` | `assets/fastgripper` | `stock-metal` | Original rigid-finger baseline and bundled policy |
 | `v1.1` | `assets/fastgripper_v1_1` | `stock-metal` | Separate rigid carriers and screw-fastened child tips; provisional physics |
 
-Software 0.3.0 and the v1.1 asset version 0.1.0 are separate version numbers.
+Software 0.4.0 and the v1.1 asset version 0.3.0 are separate version numbers.
+The v1.1 visuals retain the exterior linkage silhouettes as full-depth solid
+profiles. Assembly holes, countersinks, internal cavities and sheet interfaces
+are omitted. The worm, both toothed wheels, bent housing and motor casing are
+visible. The gears follow the existing shaft/linkage joints; tooth-contact
+forces are not simulated. Collision geometry and physical parameters retain
+the prior model's effective 20:1 transmission with provisional losses/backlash.
 Only `stock-metal` is selectable in this package. The selector does not include
 the TPU Fin Ray concept, import arbitrary customer geometry or swap parts in a
 running simulation.

@@ -18,13 +18,30 @@
     <numeric name="backlash_full_width_wheel_deg" data="0.1" />
     <numeric name="nominal_command_gap_range_m" data="0.00300194999696 0.104058727277" />
     <text name="hardware_revision" data="v1.1" />
-    <text name="model_scope" data="Provisional rigid stock fingertip physics; simplified exterior; not hardware-calibrated." />
+    <text name="model_scope" data="Provisional rigid stock fingertip physics; solid exterior profiles; not hardware-calibrated." />
   </custom>
   <asset>
+    <mesh name="driven_positive" file="meshes/driven_positive.obj" />
+    <mesh name="driven_negative" file="meshes/driven_negative.obj" />
+    <mesh name="follower_positive" file="meshes/follower_positive.obj" />
+    <mesh name="follower_negative" file="meshes/follower_negative.obj" />
     <mesh name="carrier_positive" file="meshes/carrier_positive.obj" />
     <mesh name="carrier_negative" file="meshes/carrier_negative.obj" />
     <mesh name="stock_metal_positive" file="meshes/stock_metal_positive.obj" />
     <mesh name="stock_metal_negative" file="meshes/stock_metal_negative.obj" />
+    <mesh name="chassis_base" file="meshes/chassis_base.obj" />
+    <mesh name="chassis_bridge" file="meshes/chassis_bridge.obj" />
+    <mesh name="chassis_front" file="meshes/chassis_front.obj" />
+    <mesh name="chassis_rear" file="meshes/chassis_rear.obj" />
+    <mesh name="worm" file="meshes/worm.obj" />
+    <mesh name="wheel_positive" file="meshes/wheel_positive.obj" />
+    <mesh name="wheel_negative" file="meshes/wheel_negative.obj" />
+    <mesh name="drive_coupling" file="meshes/drive_coupling.obj" />
+    <mesh name="motor_barrel" file="meshes/motor_barrel.obj" />
+    <mesh name="motor_cap" file="meshes/motor_cap.obj" />
+    <mesh name="motor_base" file="meshes/motor_base.obj" />
+    <mesh name="carrier_proxy_positive" file="meshes/carrier_proxy_positive.obj" />
+    <mesh name="carrier_proxy_negative" file="meshes/carrier_proxy_negative.obj" />
   </asset>
   <equality>
     <connect name="four_bar_closure" site1="finger_pivot_B" site2="follower_tip_B" class="fastgripper" />

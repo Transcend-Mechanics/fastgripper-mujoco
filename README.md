@@ -8,6 +8,11 @@ the models, controller and examples needed to run without CAD software.
 
 *v1.1 stock metal tips · torque-driven MuJoCo motion · provisional 3–104 mm command range*
 
+[View the worm and wheels in motion](docs/media/gripper-v1.1-drive.gif) in a
+cutaway with the housing ghosted. The normal model retains the opaque housing.
+Gear visuals follow the simulated joints; transmission forces use effective
+20:1 coupling with provisional backlash and friction.
+
 The package defaults to the **hardware v1.0 simulation baseline** and adds
 explicit **v1.1** selection with separate carriers and rigid `stock-metal`
 fingertips. Software, assets and hardware have separate versions; see
@@ -71,7 +76,11 @@ PolyScope and the URCap are optional application-integration tools.
 ## Model fidelity
 
 The gripper has articulated linkages, explicit inertias, collision envelopes and
-an effective motor/transmission model. Motor response, mass, friction, backlash,
+an effective motor/transmission model. The v1.1 visuals retain the real exterior
+linkage profiles, worm, toothed wheels, bent gear housing and motor casing, with
+assembly bores filled. The gear visuals rotate with the simulated mechanism;
+forces use effective transmission coupling rather than tooth contacts.
+Collision envelopes remain simplified. Motor response, mass, friction, backlash,
 travel and contact parameters remain provisional. Simulation results are not
 hardware payload, accuracy, force or power-off holding ratings. Bundled UR mounts
 are provisional adapters. See [the model guide](assets/fastgripper/README.md).

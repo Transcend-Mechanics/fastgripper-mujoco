@@ -4,9 +4,9 @@ Software, simulation assets and physical hardware have separate versions.
 
 | Version | Identifies |
 | --- | --- |
-| Python package `0.3.0` | Adds explicit model selection and the v1.1 stock-tip simulation |
+| Python package `0.4.0` | Upgrades v1.1 visual fidelity with solid exterior linkage profiles |
 | v1.0 asset `0.1.1` | License/provenance metadata update; the baseline physical model is unchanged |
-| v1.1 asset `0.1.0` | Separate native-linkage model with detachable rigid stock tips |
+| v1.1 asset `0.3.0` | Restored worm, wheels and housing; solid linkage profiles; unchanged transmission physics |
 | Hardware `v1.0` / `v1.1` | The physical gripper revision represented by the selected model |
 
 The default remains the tested **hardware v1.0** runtime. Select **v1.1**

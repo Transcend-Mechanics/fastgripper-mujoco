@@ -43,8 +43,17 @@ threads, tolerances, tightening torque or a manufacturing-ready interface.
 
 ## Disclosure and physical scope
 
-Exterior meshes are independently authored low-detail prisms. They contain no
-imported triangles, teeth, screw holes, sheet boundaries or motor internals.
+Exterior meshes retain the linkage silhouettes, worm helix, both toothed wheels,
+and the bent gear housing. Assembly bores are filled through their depth before
+meshing; no hidden bore walls or internal shells are retained. The motor casing
+uses solid sections at the assembled exterior dimensions, without motor internals.
+The worm and coupling rotate with the motor shaft; the two wheels rotate with
+their driven links. Functional wheel seats remain open around the gears.
+
+These gear surfaces are visual-only. The motor drives the existing effective
+20:1 transmission with provisional backlash and friction. Gear teeth do not
+generate contact forces, and their appearance does not validate engagement,
+load-dependent efficiency or self-locking. Collision proxies are unchanged.
 Articulation dimensions and explicit physical parameters remain visible. The
 source CAD stays outside this bundle. Approximate housing, motor, link and
 carrier collision envelopes screen external obstacles; exact stock gripping

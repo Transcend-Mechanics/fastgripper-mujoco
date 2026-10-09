@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.4.0 — restored mechanism and housing preview (unreleased)
+
+- Rebuilds v1.1 linkage and fingertip silhouettes as closed, full-depth solids,
+  with recognizable linkage colors.
+- Removes bores, countersinks, internal cavities and sheet interfaces from the
+  linkage and fingertip profiles.
+- Restores the worm helix, both toothed wheels, bent gear housing and motor casing.
+  Gear shaft bores and housing mounting holes are filled throughout their depth;
+  functional wheel seats remain open. Source CAD and original meshes stay private.
+- Gear visuals follow their existing joints. Forces still use the effective
+  20:1 transmission with provisional backlash/friction, without tooth contacts.
+- Advances v1.1 assets to 0.3.0; joints, inertia, contacts and collision proxies
+  retain the previous physics. v1.0 and its retained policy are unchanged.
+
 ## 0.3.0 — initial public release
 
 - Adds separately selectable hardware v1.1 assets and a stock-metal fingertip catalog.

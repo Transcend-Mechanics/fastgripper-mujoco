@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "fastgripper-sim"
-version = "0.3.0"
+version = "0.4.0"
 description = "FastGripper MuJoCo simulation, controls and learning examples"
 readme = "README.md"
 license = "LicenseRef-FastGripper-Distribution"

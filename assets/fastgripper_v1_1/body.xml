@@ -11,6 +11,8 @@
     <body name="worm_drive" pos="-0.0275002643726 -0.00291663203003 0">
       <inertial mass="0.1413643050845784" pos="5.31806993735e-05 3.70702124013e-05 -0.0143259188716" fullinertia="2.67112743991e-05 2.82218248625e-05 1.42409748826e-05 8.89703596692e-07 -1.36688354248e-07 -9.24723441814e-08" />
       <joint name="worm_joint" axis="0 0 1" limited="false" damping="0.002" armature="2e-05" frictionloss="0.08" solreffriction="0.002 1" solimpfriction="0.99 0.999 0.001" />
+      <geom name="worm_visual" mass="0" contype="0" conaffinity="0" group="1" type="mesh" mesh="worm" rgba="0.73 0.75 0.79 1" />
+      <geom name="drive_coupling_visual" mass="0" contype="0" conaffinity="0" group="1" type="mesh" mesh="drive_coupling" rgba="0.80 0.63 0.30 1" />
     </body>
     <body name="driven_positive_x" pos="3.40999999784e-08 0 -0.00274232134791">
       <inertial mass="0.30033925626810914" pos="0.0118639097625 0.00221065001259 0.0191146478958" fullinertia="0.000195422340583 0.000224679312707 6.64502204834e-05 -1.20814300924e-06 -6.9617826806e-05 -1.11943529583e-06" />
@@ -29,26 +31,23 @@
           <geom name="stock_metal_positive_visual" mass="0" contype="0" conaffinity="0" group="1" type="mesh" mesh="stock_metal_positive" rgba="0.43 0.79 0.66 1" />
         </body>
         <site name="fingertip_positive_attachment" pos="-0.0137441182253 0.00243382114975 0.0292400347291" group="3" />
-        <geom name="carrier_positive_visual" mass="0" contype="0" conaffinity="0" group="1" type="mesh" mesh="carrier_positive" rgba="0.56 0.63 0.70 1" />
-        <geom name="carrier_positive_envelope" mass="0" contype="1" conaffinity="6" group="2" rgba="0.4 0.75 0.95 0.16" friction="0.35 0.001 0.0001" condim="4" solref="0.004 1" solimp="0.95 0.99 0.001" type="mesh" mesh="carrier_positive" />
+        <geom name="carrier_positive_envelope" mass="0" contype="1" conaffinity="6" group="2" rgba="0.4 0.75 0.95 0.16" friction="0.35 0.001 0.0001" condim="4" solref="0.004 1" solimp="0.95 0.99 0.001" type="mesh" mesh="carrier_proxy_positive" />
+        <geom name="carrier_positive_visual" mass="0" contype="0" conaffinity="0" group="1" type="mesh" mesh="carrier_positive" rgba="0.43 0.79 0.66 1" />
       </body>
-      <geom name="driven_positive_bar_visual" mass="0" contype="0" conaffinity="0" group="1" rgba="0.66 0.72 0.78 1" type="box" pos="0.0180008141497 0.0024 0.0357207319347" quat="0.972887017687 0 0.231280891595 0" size="0.006 0.0135 0.04" />
       <geom name="driven_positive_bar_envelope" mass="0" contype="1" conaffinity="6" group="2" rgba="0.4 0.75 0.95 0.16" friction="0.35 0.001 0.0001" condim="4" solref="0.004 1" solimp="0.95 0.99 0.001" type="box" pos="0.0180008141497 0.0024 0.0357207319347" quat="0.972887017687 0 0.231280891595 0" size="0.006 0.0135 0.04" />
-      <geom name="driven_positive_root_visual" mass="0" contype="0" conaffinity="0" group="1" rgba="0.66 0.72 0.78 1" type="cylinder" pos="0 0.0024 0" quat="0.707106781187 0.707106781187 0 0" size="0.02 0.0135" />
       <geom name="driven_positive_root_envelope" mass="0" contype="1" conaffinity="6" group="2" rgba="0.4 0.75 0.95 0.16" friction="0.35 0.001 0.0001" condim="4" solref="0.004 1" solimp="0.95 0.99 0.001" type="cylinder" pos="0 0.0024 0" quat="0.707106781187 0.707106781187 0 0" size="0.02 0.0135" />
-      <geom name="driven_positive_tip_visual" mass="0" contype="0" conaffinity="0" group="1" rgba="0.66 0.72 0.78 1" type="cylinder" pos="0.0360016282994 0.0024 0.0714414638693" quat="0.707106781187 0.707106781187 0 0" size="0.0061 0.0135" />
       <geom name="driven_positive_tip_envelope" mass="0" contype="1" conaffinity="6" group="2" rgba="0.4 0.75 0.95 0.16" friction="0.35 0.001 0.0001" condim="4" solref="0.004 1" solimp="0.95 0.99 0.001" type="cylinder" pos="0.0360016282994 0.0024 0.0714414638693" quat="0.707106781187 0.707106781187 0 0" size="0.0061 0.0135" />
+      <geom name="driven_positive_visual" mass="0" contype="0" conaffinity="0" group="1" type="mesh" mesh="driven_positive" rgba="0.94 0.56 0.41 1" />
+      <geom name="wheel_positive_visual" mass="0" contype="0" conaffinity="0" group="1" type="mesh" mesh="wheel_positive" rgba="0.83 0.64 0.32 1" />
     </body>
     <body name="follower_positive_x" pos="-0.0137440841253 0 0.0204977133812">
       <inertial mass="0.09143834525199482" pos="0.017019918229 0.00242381655452 0.0338739679968" fullinertia="3.74417996417e-05 4.14894344216e-05 1.34435097252e-05 -2.55445368817e-09 -1.6074868086e-05 -4.86848407211e-09" />
       <joint name="follower_joint" limited="false" />
       <site name="follower_tip_B" pos="0.0360016282994 0 0.0714414638693" />
-      <geom name="follower_positive_bar_visual" mass="0" contype="0" conaffinity="0" group="1" rgba="0.42 0.49 0.57 1" type="box" pos="0.0180008141497 0.0024 0.0357207319347" quat="0.972887017687 0 0.231280891595 0" size="0.006 0.0115 0.04" />
       <geom name="follower_positive_bar_envelope" mass="0" contype="1" conaffinity="6" group="2" rgba="0.4 0.75 0.95 0.16" friction="0.35 0.001 0.0001" condim="4" solref="0.004 1" solimp="0.95 0.99 0.001" type="box" pos="0.0180008141497 0.0024 0.0357207319347" quat="0.972887017687 0 0.231280891595 0" size="0.006 0.0115 0.04" />
-      <geom name="follower_positive_root_visual" mass="0" contype="0" conaffinity="0" group="1" rgba="0.42 0.49 0.57 1" type="cylinder" pos="0 0.0024 0" quat="0.707106781187 0.707106781187 0 0" size="0.0061 0.0115" />
       <geom name="follower_positive_root_envelope" mass="0" contype="1" conaffinity="6" group="2" rgba="0.4 0.75 0.95 0.16" friction="0.35 0.001 0.0001" condim="4" solref="0.004 1" solimp="0.95 0.99 0.001" type="cylinder" pos="0 0.0024 0" quat="0.707106781187 0.707106781187 0 0" size="0.0061 0.0115" />
-      <geom name="follower_positive_tip_visual" mass="0" contype="0" conaffinity="0" group="1" rgba="0.42 0.49 0.57 1" type="cylinder" pos="0.0360016282994 0.0024 0.0714414638693" quat="0.707106781187 0.707106781187 0 0" size="0.0061 0.0115" />
       <geom name="follower_positive_tip_envelope" mass="0" contype="1" conaffinity="6" group="2" rgba="0.4 0.75 0.95 0.16" friction="0.35 0.001 0.0001" condim="4" solref="0.004 1" solimp="0.95 0.99 0.001" type="cylinder" pos="0.0360016282994 0.0024 0.0714414638693" quat="0.707106781187 0.707106781187 0 0" size="0.0061 0.0115" />
+      <geom name="follower_positive_visual" mass="0" contype="0" conaffinity="0" group="1" type="mesh" mesh="follower_positive" rgba="0.70 0.60 0.93 1" />
     </body>
     <body name="driven_negative_x" pos="-0.0550000341 0 -0.00274232134791">
       <inertial mass="0.30046049797187824" pos="-0.0118759606529 0.00220767291904 0.0191072076196" fullinertia="0.000195445905521 0.000224652353246 6.64134604749e-05 1.17882372455e-06 6.96118770914e-05 -1.13690327836e-06" />
@@ -67,30 +66,32 @@
           <geom name="stock_metal_negative_visual" mass="0" contype="0" conaffinity="0" group="1" type="mesh" mesh="stock_metal_negative" rgba="0.43 0.79 0.66 1" />
         </body>
         <site name="fingertip_negative_attachment" pos="0.0137441182253 0.00243382114975 0.0292400347291" group="3" />
-        <geom name="carrier_negative_visual" mass="0" contype="0" conaffinity="0" group="1" type="mesh" mesh="carrier_negative" rgba="0.56 0.63 0.70 1" />
-        <geom name="carrier_negative_envelope" mass="0" contype="1" conaffinity="6" group="2" rgba="0.4 0.75 0.95 0.16" friction="0.35 0.001 0.0001" condim="4" solref="0.004 1" solimp="0.95 0.99 0.001" type="mesh" mesh="carrier_negative" />
+        <geom name="carrier_negative_envelope" mass="0" contype="1" conaffinity="6" group="2" rgba="0.4 0.75 0.95 0.16" friction="0.35 0.001 0.0001" condim="4" solref="0.004 1" solimp="0.95 0.99 0.001" type="mesh" mesh="carrier_proxy_negative" />
+        <geom name="carrier_negative_visual" mass="0" contype="0" conaffinity="0" group="1" type="mesh" mesh="carrier_negative" rgba="0.43 0.79 0.66 1" />
       </body>
-      <geom name="driven_negative_bar_visual" mass="0" contype="0" conaffinity="0" group="1" rgba="0.66 0.72 0.78 1" type="box" pos="-0.0180008141497 0.0024 0.0357207319347" quat="0.972887017687 0 -0.231280891595 0" size="0.006 0.0135 0.04" />
       <geom name="driven_negative_bar_envelope" mass="0" contype="1" conaffinity="6" group="2" rgba="0.4 0.75 0.95 0.16" friction="0.35 0.001 0.0001" condim="4" solref="0.004 1" solimp="0.95 0.99 0.001" type="box" pos="-0.0180008141497 0.0024 0.0357207319347" quat="0.972887017687 0 -0.231280891595 0" size="0.006 0.0135 0.04" />
-      <geom name="driven_negative_root_visual" mass="0" contype="0" conaffinity="0" group="1" rgba="0.66 0.72 0.78 1" type="cylinder" pos="0 0.0024 0" quat="0.707106781187 0.707106781187 0 0" size="0.02 0.0135" />
       <geom name="driven_negative_root_envelope" mass="0" contype="1" conaffinity="6" group="2" rgba="0.4 0.75 0.95 0.16" friction="0.35 0.001 0.0001" condim="4" solref="0.004 1" solimp="0.95 0.99 0.001" type="cylinder" pos="0 0.0024 0" quat="0.707106781187 0.707106781187 0 0" size="0.02 0.0135" />
-      <geom name="driven_negative_tip_visual" mass="0" contype="0" conaffinity="0" group="1" rgba="0.66 0.72 0.78 1" type="cylinder" pos="-0.0360016282994 0.0024 0.0714414638693" quat="0.707106781187 0.707106781187 0 0" size="0.0061 0.0135" />
       <geom name="driven_negative_tip_envelope" mass="0" contype="1" conaffinity="6" group="2" rgba="0.4 0.75 0.95 0.16" friction="0.35 0.001 0.0001" condim="4" solref="0.004 1" solimp="0.95 0.99 0.001" type="cylinder" pos="-0.0360016282994 0.0024 0.0714414638693" quat="0.707106781187 0.707106781187 0 0" size="0.0061 0.0135" />
+      <geom name="driven_negative_visual" mass="0" contype="0" conaffinity="0" group="1" type="mesh" mesh="driven_negative" rgba="0.94 0.56 0.41 1" />
+      <geom name="wheel_negative_visual" mass="0" contype="0" conaffinity="0" group="1" type="mesh" mesh="wheel_negative" rgba="0.83 0.64 0.32 1" />
     </body>
     <body name="follower_negative_x" pos="-0.0412559158747 0 0.0204977133812">
       <inertial mass="0.09143820239454234" pos="-0.017019880869 0.00242380545254 0.0338739046946" fullinertia="3.74415578884e-05 4.14891181871e-05 1.34434208167e-05 2.53017861633e-09 1.60747296765e-05 -4.82735274347e-09" />
       <joint name="follower_negative_joint" limited="false" />
       <site name="follower_negative_tip_B" pos="-0.0360016282994 0 0.0714414638693" />
-      <geom name="follower_negative_bar_visual" mass="0" contype="0" conaffinity="0" group="1" rgba="0.42 0.49 0.57 1" type="box" pos="-0.0180008141497 0.0024 0.0357207319347" quat="0.972887017687 0 -0.231280891595 0" size="0.006 0.0115 0.04" />
       <geom name="follower_negative_bar_envelope" mass="0" contype="1" conaffinity="6" group="2" rgba="0.4 0.75 0.95 0.16" friction="0.35 0.001 0.0001" condim="4" solref="0.004 1" solimp="0.95 0.99 0.001" type="box" pos="-0.0180008141497 0.0024 0.0357207319347" quat="0.972887017687 0 -0.231280891595 0" size="0.006 0.0115 0.04" />
-      <geom name="follower_negative_root_visual" mass="0" contype="0" conaffinity="0" group="1" rgba="0.42 0.49 0.57 1" type="cylinder" pos="0 0.0024 0" quat="0.707106781187 0.707106781187 0 0" size="0.0061 0.0115" />
       <geom name="follower_negative_root_envelope" mass="0" contype="1" conaffinity="6" group="2" rgba="0.4 0.75 0.95 0.16" friction="0.35 0.001 0.0001" condim="4" solref="0.004 1" solimp="0.95 0.99 0.001" type="cylinder" pos="0 0.0024 0" quat="0.707106781187 0.707106781187 0 0" size="0.0061 0.0115" />
-      <geom name="follower_negative_tip_visual" mass="0" contype="0" conaffinity="0" group="1" rgba="0.42 0.49 0.57 1" type="cylinder" pos="-0.0360016282994 0.0024 0.0714414638693" quat="0.707106781187 0.707106781187 0 0" size="0.0061 0.0115" />
       <geom name="follower_negative_tip_envelope" mass="0" contype="1" conaffinity="6" group="2" rgba="0.4 0.75 0.95 0.16" friction="0.35 0.001 0.0001" condim="4" solref="0.004 1" solimp="0.95 0.99 0.001" type="cylinder" pos="-0.0360016282994 0.0024 0.0714414638693" quat="0.707106781187 0.707106781187 0 0" size="0.0061 0.0115" />
+      <geom name="follower_negative_visual" mass="0" contype="0" conaffinity="0" group="1" type="mesh" mesh="follower_negative" rgba="0.70 0.60 0.93 1" />
     </body>
-    <geom name="housing_visual" mass="0" contype="0" conaffinity="0" group="1" rgba="0.18 0.22 0.28 1" type="box" pos="-0.0275002643726 -0.00291663203003 -0.004" size="0.037 0.029 0.03" />
     <geom name="housing_envelope" mass="0" contype="1" conaffinity="6" group="2" rgba="0.4 0.75 0.95 0.16" friction="0.35 0.001 0.0001" condim="4" solref="0.004 1" solimp="0.95 0.99 0.001" type="box" pos="-0.0275002643726 -0.00291663203003 -0.004" size="0.037 0.029 0.03" />
-    <geom name="motor_visual" mass="0" contype="0" conaffinity="0" group="1" rgba="0.25 0.30 0.37 1" type="cylinder" pos="-0.0275002643726 -0.00291663203003 -0.057" size="0.029 0.023" />
     <geom name="motor_envelope" mass="0" contype="1" conaffinity="6" group="2" rgba="0.4 0.75 0.95 0.16" friction="0.35 0.001 0.0001" condim="4" solref="0.004 1" solimp="0.95 0.99 0.001" type="cylinder" pos="-0.0275002643726 -0.00291663203003 -0.057" size="0.029 0.023" />
+    <geom name="chassis_base_visual" mass="0" contype="0" conaffinity="0" group="1" type="mesh" mesh="chassis_base" rgba="0.53 0.57 0.62 1" />
+    <geom name="chassis_bridge_visual" mass="0" contype="0" conaffinity="0" group="1" type="mesh" mesh="chassis_bridge" rgba="0.53 0.57 0.62 1" />
+    <geom name="chassis_front_visual" mass="0" contype="0" conaffinity="0" group="1" type="mesh" mesh="chassis_front" rgba="0.53 0.57 0.62 1" />
+    <geom name="chassis_rear_visual" mass="0" contype="0" conaffinity="0" group="1" type="mesh" mesh="chassis_rear" rgba="0.53 0.57 0.62 1" />
+    <geom name="motor_barrel_visual" mass="0" contype="0" conaffinity="0" group="1" type="mesh" mesh="motor_barrel" rgba="0.31 0.71 0.86 1" />
+    <geom name="motor_cap_visual" mass="0" contype="0" conaffinity="0" group="1" type="mesh" mesh="motor_cap" rgba="0.63 0.67 0.71 1" />
+    <geom name="motor_base_visual" mass="0" contype="0" conaffinity="0" group="1" type="mesh" mesh="motor_base" rgba="0.17 0.20 0.24 1" />
   </body>
 </mujocoinclude>

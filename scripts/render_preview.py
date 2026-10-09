@@ -52,7 +52,7 @@ def model_files(path):
     return files
 
 
-def studio_model(path, width, height):
+def studio_model(path, width, height, *, cutaway=False):
     files = model_files(path)
     root = ET.fromstring(files[path.name])
     if root.find("worldbody/body[@name='gripper_mount']") is None:
@@ -87,11 +87,15 @@ def studio_model(path, width, height):
     # Appearance changes have no contact or mass effect.
     for side in ("positive", "negative"):
         compiled.geom(f"stock_metal_{side}_visual").rgba[:] = [.26, .77, .69, 1]
-        compiled.geom(f"carrier_{side}_visual").rgba[:] = [.54, .62, .70, 1]
+        compiled.geom(f"carrier_{side}_visual").rgba[:] = [.26, .77, .69, 1]
+    if cutaway:
+        for name in ("chassis_front", "chassis_rear", "chassis_base", "chassis_bridge",
+                     "driven_positive", "driven_negative"):
+            compiled.geom(name+"_visual").rgba[3] = .10
     return compiled, files
 
 
-def caption(frame, aperture, state):
+def caption(frame, aperture, state, *, cutaway=False):
     draw = ImageDraw.Draw(frame)
     width, height = frame.size
     title = ImageFont.load_default(size=29)
@@ -100,7 +104,7 @@ def caption(frame, aperture, state):
     label = ImageFont.load_default(size=11)
     white, muted, accent = "#eef4f5", "#acbac5", "#63cdbc"
     draw.text((34, 26), "FASTGRIPPER", font=title, fill=white)
-    draw.text((36, 65), "v1.1  /  Stock fingertips", font=body, fill=muted)
+    draw.text((36, 65), "v1.1  /  Drive cutaway" if cutaway else "v1.1  /  Stock fingertips", font=body, fill=muted)
     draw.line((36, 94, 85, 94), fill=accent, width=3)
     draw.rounded_rectangle((width-155, 31, width-31, 61), radius=14, fill="#213c40")
     draw.text((width-139, 40), "MUJOCO PHYSICS", font=label, fill=accent)
@@ -108,12 +112,14 @@ def caption(frame, aperture, state):
     draw.text((35, height-67), state.upper(), font=body, fill=white)
     draw.text((width-210, height-67), f"Jaw opening  {aperture*1000:5.1f} mm", font=body, fill=accent)
     draw.text((35, height-37), "Motor-driven simulation  /  Nominal command range 3-104 mm", font=small, fill=muted)
-    draw.text((35, height-20), "Provisional parameters; hardware travel and forces await calibration.", font=small, fill=muted)
+    note = ("Ghosted housing / Effective 20:1 coupling; gear teeth are visual-only." if cutaway else
+            "Provisional parameters; hardware travel and forces await calibration.")
+    draw.text((35, height-20), note, font=small, fill=muted)
     return frame
 
 
-def render(path, output, *, width=800, height=700, fps=20, seconds=12):
-    model, sources = studio_model(path, width, height)
+def render(path, output, *, width=800, height=700, fps=20, seconds=12, cutaway=False):
+    model, sources = studio_model(path, width, height, cutaway=cutaway)
     data = mujoco.MjData(model)
     mujoco.mj_resetDataKeyframe(model, data, model.key("open").id)
     mujoco.mj_forward(model, data)
@@ -142,8 +148,8 @@ def render(path, output, *, width=800, height=700, fps=20, seconds=12):
     camera = mujoco.MjvCamera()
     camera.lookat[:] = [-.0275, .0024, .032]
     camera.distance = .46
-    camera.azimuth = 108
-    camera.elevation = -16
+    camera.azimuth = 120 if cutaway else 108
+    camera.elevation = -24 if cutaway else -16
     options = mujoco.MjvOption()
     options.sitegroup[:] = 0
     options.geomgroup[2] = 0
@@ -166,7 +172,7 @@ def render(path, output, *, width=800, height=700, fps=20, seconds=12):
             settled = abs(controller.motor_position_rad-controller.target_motor_rad) < .35
             state = ("Open" if target == 0 else "Closed") if settled else ("Opening" if target == 0 else "Closing")
             renderer.update_scene(data, camera=camera, scene_option=options)
-            frame = caption(Image.fromarray(renderer.render()), aperture, state)
+            frame = caption(Image.fromarray(renderer.render()), aperture, state, cutaway=cutaway)
             if still is None:
                 still = frame.copy()
                 palette = frame.quantize(colors=160, method=Image.Quantize.MEDIANCUT)
@@ -184,6 +190,7 @@ def render(path, output, *, width=800, height=700, fps=20, seconds=12):
     if aperture_range[1]-aperture_range[0] < .09:
         raise RuntimeError("Preview did not demonstrate the expected opening/closing travel")
     report = {"schema_version": 1, "hardware_revision": "v1.1", "fingertip": "stock-metal",
+              "view": "drive-cutaway" if cutaway else "assembled",
               "model": path.name, "renderer": "scripts/render_preview.py",
               "model_files_sha256": {name: hashlib.sha256(data).hexdigest() for name, data in sorted(sources.items())},
               "gif_sha256": digest(gif),
@@ -215,6 +222,7 @@ def main():
     parser.add_argument("--height", type=int, default=700)
     parser.add_argument("--fps", type=int, default=20)
     parser.add_argument("--seconds", type=float, default=12.)
+    parser.add_argument("--cutaway", action="store_true", help="Ghost housing and driven links to show the gear train")
     args = parser.parse_args()
     if not 640 <= args.width <= 1920 or not 600 <= args.height <= 1440 or not 10 <= args.fps <= 40:
         parser.error("Use width 640..1920, height 600..1440 and fps 10..40")
@@ -224,7 +232,7 @@ def main():
         from fastgripper_sim.models import model_path
         args.model = model_path(hardware="v1.1", tip="stock-metal")
     render(args.model.expanduser().resolve(), args.output, width=args.width, height=args.height,
-           fps=args.fps, seconds=args.seconds)
+           fps=args.fps, seconds=args.seconds, cutaway=args.cutaway)
 
 
 if __name__ == "__main__":

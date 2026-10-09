@@ -1,5 +1,5 @@
 {
-  "asset_version": "0.1.0",
+  "asset_version": "0.3.0",
   "entrypoints": {
     "body_fragment": "body.xml",
     "demonstration": "scene.xml",
@@ -9,19 +9,38 @@
   },
   "files": {
     "LICENSE": "a367b948c6fb263268a3db1f688d1c6aef228c97ea8a193b7c89c0e555df77b7",
-    "README.md": "8ae66956d8f49a997e8b4f293c3213ed2d87f6cd3a73bad27325df8bf3683c3e",
-    "body.xml": "cf021ca355b67c99aa6c06c6f7c81310aed0fd22303608fa44c01eabd5325da6",
-    "fingertips.json": "c5ff32394616dfed930d02c762d89b16f9c923b2df9d7d7e2e6393e27a295545",
-    "mechanism.xml": "bec7580a4c4ac9e54978343acb29c52af41097d39722a1b5a87535ce43ba793c",
-    "meshes/carrier_negative.obj": "88d030bcbb855170b2e1ef8de2de3bd23f7f43f5d5796ede9b2f967e94db4790",
-    "meshes/carrier_positive.obj": "abf7036fbbd0133d96efcb17bb68a9ccee741d74a2b5f3eb5bf4e8650868a745",
-    "meshes/stock_metal_negative.obj": "686076ee31a833b2d91f740808ead2836429c5a8d7a58d38092cd1d46b642f1f",
-    "meshes/stock_metal_positive.obj": "3d91501834d04cbeb7e2db331e5b69f91d498865811c7dc5bcecdbd795a4f111",
+    "README.md": "d2b7828528e0ab4b2de43a120842ff94a80e487c1e71dcc39bf57e7fd6521ed5",
+    "body.xml": "15080c0f0161e7e037b985db06180f3f0ebb9f11959fcbf8c550ca0b6405b185",
+    "fingertips.json": "f44f637cbc64b304027d10dac667b091ee085e5d78e9bfa36cefd71089cd9f2f",
+    "mechanism.xml": "c271139622a6cc2b08d5ef2fc737adbe330306ffa9a8fd34bb9b81df33e87ac7",
+    "meshes/carrier_negative.obj": "759956cb14dac93c6967e94e9f2cb1949bb9d7de8313b169f1511aa9a71ee72f",
+    "meshes/carrier_positive.obj": "97fd861ff7b237e624056bda3ebaea0d33016260c377970011e51cb2b58a1f37",
+    "meshes/carrier_proxy_negative.obj": "88d030bcbb855170b2e1ef8de2de3bd23f7f43f5d5796ede9b2f967e94db4790",
+    "meshes/carrier_proxy_positive.obj": "abf7036fbbd0133d96efcb17bb68a9ccee741d74a2b5f3eb5bf4e8650868a745",
+    "meshes/chassis_base.obj": "4b289816cb7d83dd1091155c4b5aff15a58e0a262f38f901c01ed522ff52b905",
+    "meshes/chassis_bridge.obj": "df7ddc7a22c705f744a459a78a075e7340b10abb8cdc49a120e4de99ea6c866e",
+    "meshes/chassis_front.obj": "c0890ac4fc0122684c1c66f9a2f179ecda934def8531be45eabb2bd87fe5aace",
+    "meshes/chassis_rear.obj": "b716e61111f089543da9b6f1e9fd9a59e1a4ff86c9bf46c8a7112d2ba2b15d96",
+    "meshes/drive_coupling.obj": "3a45add1ac97e3c0d1267075c4dee7888288718959bbb3bd81f40e5d7a54a0a1",
+    "meshes/driven_negative.obj": "3c39206bb371bffb08006f1996ee9c042ab07307beca3f05bb44255e82e66b7a",
+    "meshes/driven_positive.obj": "39034957e5387b753e20931eb5e6544b1290674db5efa2b3e8a25ad045c52a0c",
+    "meshes/follower_negative.obj": "50f53c104d996fb57670ead1e93185768865823d8fa91770aeddc7299d9c90f7",
+    "meshes/follower_positive.obj": "dec7a63dac1791951ab6d03ab4d0b34203ddf04a19b9162398a88bd465bcea3f",
+    "meshes/motor_barrel.obj": "341146382285bd703fd8fe916ecc1f559c4a9095bf729ca774571e1615ad926c",
+    "meshes/motor_base.obj": "58a7a757cc57cd5a4920854d2ee95a29cd03257de175ce54630acc26ebb0dd68",
+    "meshes/motor_cap.obj": "a10b16adccfdb35c1091065d19af2ef47d3bec18d2b3d657247b0de9cd3a0c28",
+    "meshes/stock_metal_negative.obj": "9d09ccd0d5a35e201ebdc4e61be9f4997ecc9d7dc2c5d9f7ff4fead2486027e6",
+    "meshes/stock_metal_positive.obj": "ebcd48f689dbef9aadc835a43c0d2d69fcbdb6acf2a72bbd5f98426a3000791f",
+    "meshes/wheel_negative.obj": "229513426eb3720e7a1618f063799b76109736cf6d796c04c0590daae7c627ce",
+    "meshes/wheel_positive.obj": "74faafdb525c9bec5da9802119a669eafb3a160e09d817ef805238300a2ee236",
+    "meshes/worm.obj": "d7792b636dcb8d9be643d13516994cc756c212f0a87cd656b67868cfdcec1d44",
     "model.xml": "d8d16cb1d2b4046227b408d5f9b4e7fa9328a2665b554f9e395d1815b0a81783",
     "scene.xml": "c9dfa5607085b4209bce7fc4fded95c3d4593afda3f69320d0feab47f439db56"
   },
   "generator": "fastgripper-v1.1-runtime-export",
   "geometry": {
+    "assembly_features": "Assembly bores filled throughout; gear teeth, wheel seats and bent housing retained.",
+    "cad_derived_exterior_profiles": true,
     "collision_bits": {
       "environment": 4,
       "gripper": 1,
@@ -29,7 +48,9 @@
     },
     "self_collision": "disabled by masks; external envelopes approximate",
     "source_meshes_copied": false,
-    "type": "authored primitives and separate extruded carrier/tip outlines"
+    "transmission_physics": "Effective 20:1 coupling with provisional backlash/friction; no tooth-contact forces.",
+    "transmission_visuals": "Worm/coupling follow the motor shaft; both wheels follow the driven links.",
+    "type": "solid linkages, bore-free gear exteriors, bent housing and solid motor casing"
   },
   "hardware_revision": "v1.1",
   "interface": {
@@ -60,7 +81,7 @@
     "Two rigid bare-metal fingertips; no flexible material simulation or pads.",
     "Attachment frames are for simulation; mechanical manufacturing interfaces are not released.",
     "No robot flange adapter transform is supplied.",
-    "Source mesh detail is absent; mechanism dimensions and inertial parameters remain visible.",
+    "Exterior profiles, mechanism dimensions and inertial parameters remain visible; internal assembly features are omitted.",
     "Simulation and accessory license; not open-source hardware or permission to reproduce the core mechanism."
   ],
   "schema_version": 1,

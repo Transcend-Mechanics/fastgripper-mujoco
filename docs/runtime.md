@@ -34,7 +34,8 @@ The learning example trains gripper commands and does not learn arm motion.
 
 ## What is approximated?
 
-The model uses simplified exterior and collision geometry. Its transmission
+The v1.1 model uses solid exterior linkage profiles with assembly features
+removed; collision geometry remains simplified. Its transmission
 represents the effective relationship between motor and linkages; gear-tooth
 contact is not resolved. The gripper's collision masks suppress self contacts,
 so the included envelopes support external obstacle screening, not a complete

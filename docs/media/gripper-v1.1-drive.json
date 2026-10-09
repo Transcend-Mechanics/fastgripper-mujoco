@@ -1,0 +1,1341 @@
+{
+  "commands": [
+    {
+      "position_pct": 0,
+      "time_s": 0.0
+    },
+    {
+      "position_pct": 100,
+      "time_s": 1.0
+    },
+    {
+      "position_pct": 0,
+      "time_s": 6.0
+    }
+  ],
+  "controller_driven_motion": true,
+  "controller_update_period_s": 0.001,
+  "fingertip": "stock-metal",
+  "force_pct": 30,
+  "fps": 15,
+  "gif_sha256": "edb07256e9fe29533997efd05e162ca23a3c10fc26e1447da4580408cab1196f",
+  "hardware_revision": "v1.1",
+  "height": 700,
+  "maximum_motor_torque_nm": 0.0986775451001507,
+  "measured_aperture_range_m": [
+    0.005191040505220061,
+    0.10417267469634028
+  ],
+  "media_sha256": {
+    "gripper-v1.1-drive.gif": "edb07256e9fe29533997efd05e162ca23a3c10fc26e1447da4580408cab1196f"
+  },
+  "model": "model.xml",
+  "model_files_sha256": {
+    "body.xml": "15080c0f0161e7e037b985db06180f3f0ebb9f11959fcbf8c550ca0b6405b185",
+    "mechanism.xml": "c271139622a6cc2b08d5ef2fc737adbe330306ffa9a8fd34bb9b81df33e87ac7",
+    "meshes/carrier_negative.obj": "759956cb14dac93c6967e94e9f2cb1949bb9d7de8313b169f1511aa9a71ee72f",
+    "meshes/carrier_positive.obj": "97fd861ff7b237e624056bda3ebaea0d33016260c377970011e51cb2b58a1f37",
+    "meshes/carrier_proxy_negative.obj": "88d030bcbb855170b2e1ef8de2de3bd23f7f43f5d5796ede9b2f967e94db4790",
+    "meshes/carrier_proxy_positive.obj": "abf7036fbbd0133d96efcb17bb68a9ccee741d74a2b5f3eb5bf4e8650868a745",
+    "meshes/chassis_base.obj": "4b289816cb7d83dd1091155c4b5aff15a58e0a262f38f901c01ed522ff52b905",
+    "meshes/chassis_bridge.obj": "df7ddc7a22c705f744a459a78a075e7340b10abb8cdc49a120e4de99ea6c866e",
+    "meshes/chassis_front.obj": "c0890ac4fc0122684c1c66f9a2f179ecda934def8531be45eabb2bd87fe5aace",
+    "meshes/chassis_rear.obj": "b716e61111f089543da9b6f1e9fd9a59e1a4ff86c9bf46c8a7112d2ba2b15d96",
+    "meshes/drive_coupling.obj": "3a45add1ac97e3c0d1267075c4dee7888288718959bbb3bd81f40e5d7a54a0a1",
+    "meshes/driven_negative.obj": "3c39206bb371bffb08006f1996ee9c042ab07307beca3f05bb44255e82e66b7a",
+    "meshes/driven_positive.obj": "39034957e5387b753e20931eb5e6544b1290674db5efa2b3e8a25ad045c52a0c",
+    "meshes/follower_negative.obj": "50f53c104d996fb57670ead1e93185768865823d8fa91770aeddc7299d9c90f7",
+    "meshes/follower_positive.obj": "dec7a63dac1791951ab6d03ab4d0b34203ddf04a19b9162398a88bd465bcea3f",
+    "meshes/motor_barrel.obj": "341146382285bd703fd8fe916ecc1f559c4a9095bf729ca774571e1615ad926c",
+    "meshes/motor_base.obj": "58a7a757cc57cd5a4920854d2ee95a29cd03257de175ce54630acc26ebb0dd68",
+    "meshes/motor_cap.obj": "a10b16adccfdb35c1091065d19af2ef47d3bec18d2b3d657247b0de9cd3a0c28",
+    "meshes/stock_metal_negative.obj": "9d09ccd0d5a35e201ebdc4e61be9f4997ecc9d7dc2c5d9f7ff4fead2486027e6",
+    "meshes/stock_metal_positive.obj": "ebcd48f689dbef9aadc835a43c0d2d69fcbdb6acf2a72bbd5f98426a3000791f",
+    "meshes/wheel_negative.obj": "229513426eb3720e7a1618f063799b76109736cf6d796c04c0590daae7c627ce",
+    "meshes/wheel_positive.obj": "74faafdb525c9bec5da9802119a669eafb3a160e09d817ef805238300a2ee236",
+    "meshes/worm.obj": "d7792b636dcb8d9be643d13516994cc756c212f0a87cd656b67868cfdcec1d44",
+    "model.xml": "d8d16cb1d2b4046227b408d5f9b4e7fa9328a2665b554f9e395d1815b0a81783"
+  },
+  "mujoco_version": "3.13.0",
+  "native_physics_steps": 250000,
+  "nominal_command_aperture_range_m": [
+    0.00300194999696,
+    0.104058727277
+  ],
+  "physics_timestep_s": 5e-05,
+  "playback_seconds": 12.0,
+  "rendered_frames": 180,
+  "renderer": "scripts/render_preview.py",
+  "samples": [
+    {
+      "aperture_m": 0.10417267469634028,
+      "motor_position_rad": -3.0,
+      "motor_torque_nm": -3.5507525833377317e-17,
+      "target_position_pct": 0,
+      "time_s": 0.06666666666666667
+    },
+    {
+      "aperture_m": 0.10417267469634028,
+      "motor_position_rad": -3.0,
+      "motor_torque_nm": -3.2794073030404594e-17,
+      "target_position_pct": 0,
+      "time_s": 0.13333333333333333
+    },
+    {
+      "aperture_m": 0.10417267469634028,
+      "motor_position_rad": -3.0,
+      "motor_torque_nm": -4.26387252509473e-17,
+      "target_position_pct": 0,
+      "time_s": 0.2
+    },
+    {
+      "aperture_m": 0.10417267469634028,
+      "motor_position_rad": -3.0,
+      "motor_torque_nm": -3.596693351271791e-17,
+      "target_position_pct": 0,
+      "time_s": 0.26666666666666666
+    },
+    {
+      "aperture_m": 0.10417267469634028,
+      "motor_position_rad": -3.0,
+      "motor_torque_nm": -3.8535950304601014e-17,
+      "target_position_pct": 0,
+      "time_s": 0.3333333333333333
+    },
+    {
+      "aperture_m": 0.10417267469634028,
+      "motor_position_rad": -3.0,
+      "motor_torque_nm": -3.2763927232742347e-17,
+      "target_position_pct": 0,
+      "time_s": 0.4
+    },
+    {
+      "aperture_m": 0.10417267469634028,
+      "motor_position_rad": -3.0,
+      "motor_torque_nm": -3.6458424998671736e-17,
+      "target_position_pct": 0,
+      "time_s": 0.4666666666666667
+    },
+    {
+      "aperture_m": 0.10417267469634028,
+      "motor_position_rad": -3.0,
+      "motor_torque_nm": -3.213366078676415e-17,
+      "target_position_pct": 0,
+      "time_s": 0.5333333333333333
+    },
+    {
+      "aperture_m": 0.10417267469634028,
+      "motor_position_rad": -3.0,
+      "motor_torque_nm": -3.6942093007215796e-17,
+      "target_position_pct": 0,
+      "time_s": 0.6
+    },
+    {
+      "aperture_m": 0.10417267469634028,
+      "motor_position_rad": -3.0,
+      "motor_torque_nm": -3.9117941976423183e-17,
+      "target_position_pct": 0,
+      "time_s": 0.6666666666666666
+    },
+    {
+      "aperture_m": 0.10417267469634028,
+      "motor_position_rad": -3.0,
+      "motor_torque_nm": -3.905917213326683e-17,
+      "target_position_pct": 0,
+      "time_s": 0.7333333333333333
+    },
+    {
+      "aperture_m": 0.10417267469634028,
+      "motor_position_rad": -3.0,
+      "motor_torque_nm": -3.420467194124012e-17,
+      "target_position_pct": 0,
+      "time_s": 0.8
+    },
+    {
+      "aperture_m": 0.10417267469634028,
+      "motor_position_rad": -3.0,
+      "motor_torque_nm": -3.931836831118946e-17,
+      "target_position_pct": 0,
+      "time_s": 0.8666666666666667
+    },
+    {
+      "aperture_m": 0.10417267469634028,
+      "motor_position_rad": -3.0,
+      "motor_torque_nm": -3.5273427668338816e-17,
+      "target_position_pct": 0,
+      "time_s": 0.9333333333333333
+    },
+    {
+      "aperture_m": 0.10417267469634028,
+      "motor_position_rad": -3.0,
+      "motor_torque_nm": -3.409010027251991e-17,
+      "target_position_pct": 0,
+      "time_s": 1.0
+    },
+    {
+      "aperture_m": 0.10357387391481418,
+      "motor_position_rad": -2.90819504284391,
+      "motor_torque_nm": 0.09528690839040577,
+      "target_position_pct": 100,
+      "time_s": 1.0666666666666667
+    },
+    {
+      "aperture_m": 0.10203864686435227,
+      "motor_position_rad": -2.6744718912666223,
+      "motor_torque_nm": 0.09799350288459507,
+      "target_position_pct": 100,
+      "time_s": 1.1333333333333333
+    },
+    {
+      "aperture_m": 0.10031548980954459,
+      "motor_position_rad": -2.414397225607475,
+      "motor_torque_nm": 0.09781559691674424,
+      "target_position_pct": 100,
+      "time_s": 1.2
+    },
+    {
+      "aperture_m": 0.09857723656576337,
+      "motor_position_rad": -2.154310646243242,
+      "motor_torque_nm": 0.09763601203844274,
+      "target_position_pct": 100,
+      "time_s": 1.2666666666666666
+    },
+    {
+      "aperture_m": 0.09682285768281526,
+      "motor_position_rad": -1.8940169150658777,
+      "motor_torque_nm": 0.09745464273039062,
+      "target_position_pct": 100,
+      "time_s": 1.3333333333333333
+    },
+    {
+      "aperture_m": 0.0950552773217759,
+      "motor_position_rad": -1.6339061686643324,
+      "motor_torque_nm": 0.0972717912787111,
+      "target_position_pct": 100,
+      "time_s": 1.4
+    },
+    {
+      "aperture_m": 0.09327348211136921,
+      "motor_position_rad": -1.3737831820415336,
+      "motor_torque_nm": 0.09708735296746429,
+      "target_position_pct": 100,
+      "time_s": 1.4666666666666666
+    },
+    {
+      "aperture_m": 0.09147641848739538,
+      "motor_position_rad": -1.1134526955178858,
+      "motor_torque_nm": 0.09690121859312661,
+      "target_position_pct": 100,
+      "time_s": 1.5333333333333334
+    },
+    {
+      "aperture_m": 0.08966708200997421,
+      "motor_position_rad": -0.8533049069446819,
+      "motor_torque_nm": 0.09671369841030986,
+      "target_position_pct": 100,
+      "time_s": 1.6
+    },
+    {
+      "aperture_m": 0.087844434231233,
+      "motor_position_rad": -0.5931445700990042,
+      "motor_torque_nm": 0.0965246849055581,
+      "target_position_pct": 100,
+      "time_s": 1.6666666666666667
+    },
+    {
+      "aperture_m": 0.08600739907667593,
+      "motor_position_rad": -0.33277640320435836,
+      "motor_torque_nm": 0.09633406634354547,
+      "target_position_pct": 100,
+      "time_s": 1.7333333333333334
+    },
+    {
+      "aperture_m": 0.08415903900149699,
+      "motor_position_rad": -0.07259066692162722,
+      "motor_torque_nm": 0.0961421604811945,
+      "target_position_pct": 100,
+      "time_s": 1.8
+    },
+    {
+      "aperture_m": 0.08229829206713396,
+      "motor_position_rad": 0.18760790674109695,
+      "motor_torque_nm": 0.09594885717173351,
+      "target_position_pct": 100,
+      "time_s": 1.8666666666666667
+    },
+    {
+      "aperture_m": 0.08042406133350802,
+      "motor_position_rad": 0.4480146221465344,
+      "motor_torque_nm": 0.09575404231878837,
+      "target_position_pct": 100,
+      "time_s": 1.9333333333333333
+    },
+    {
+      "aperture_m": 0.07853947154115253,
+      "motor_position_rad": 0.7082391543713944,
+      "motor_torque_nm": 0.09555804070362939,
+      "target_position_pct": 100,
+      "time_s": 2.0
+    },
+    {
+      "aperture_m": 0.07664343888273534,
+      "motor_position_rad": 0.9684767936864711,
+      "motor_torque_nm": 0.0953607397143732,
+      "target_position_pct": 100,
+      "time_s": 2.066666666666667
+    },
+    {
+      "aperture_m": 0.07473484722946898,
+      "motor_position_rad": 1.2289228674955244,
+      "motor_torque_nm": 0.09516202306801302,
+      "target_position_pct": 100,
+      "time_s": 2.1333333333333333
+    },
+    {
+      "aperture_m": 0.07281687889831148,
+      "motor_position_rad": 1.4891869852567505,
+      "motor_torque_nm": 0.09496222208104266,
+      "target_position_pct": 100,
+      "time_s": 2.2
+    },
+    {
+      "aperture_m": 0.07088842986862902,
+      "motor_position_rad": 1.7494644599957032,
+      "motor_torque_nm": 0.0947612218484779,
+      "target_position_pct": 100,
+      "time_s": 2.2666666666666666
+    },
+    {
+      "aperture_m": 0.06894836652940409,
+      "motor_position_rad": 2.00995064257677,
+      "motor_torque_nm": 0.09455890407844336,
+      "target_position_pct": 100,
+      "time_s": 2.3333333333333335
+    },
+    {
+      "aperture_m": 0.06699992397268487,
+      "motor_position_rad": 2.2702550755824245,
+      "motor_torque_nm": 0.09435560612311722,
+      "target_position_pct": 100,
+      "time_s": 2.4
+    },
+    {
+      "aperture_m": 0.0650419796510355,
+      "motor_position_rad": 2.530573095234079,
+      "motor_torque_nm": 0.0941512109599274,
+      "target_position_pct": 100,
+      "time_s": 2.466666666666667
+    },
+    {
+      "aperture_m": 0.06307338420468737,
+      "motor_position_rad": 2.791100076240469,
+      "motor_torque_nm": 0.0939455984690043,
+      "target_position_pct": 100,
+      "time_s": 2.533333333333333
+    },
+    {
+      "aperture_m": 0.06109742061395039,
+      "motor_position_rad": 3.0514454931520225,
+      "motor_torque_nm": 0.0937391115289472,
+      "target_position_pct": 100,
+      "time_s": 2.6
+    },
+    {
+      "aperture_m": 0.059112949519552725,
+      "motor_position_rad": 3.311804705791699,
+      "motor_torque_nm": 0.09353163117835273,
+      "target_position_pct": 100,
+      "time_s": 2.6666666666666665
+    },
+    {
+      "aperture_m": 0.05711880757080516,
+      "motor_position_rad": 3.5723731130598386,
+      "motor_torque_nm": 0.09332303565308475,
+      "target_position_pct": 100,
+      "time_s": 2.7333333333333334
+    },
+    {
+      "aperture_m": 0.055118320671042234,
+      "motor_position_rad": 3.832760120421238,
+      "motor_torque_nm": 0.09311367283987915,
+      "target_position_pct": 100,
+      "time_s": 2.8
+    },
+    {
+      "aperture_m": 0.05311033438997668,
+      "motor_position_rad": 4.093161111670036,
+      "motor_torque_nm": 0.09290342202028423,
+      "target_position_pct": 100,
+      "time_s": 2.8666666666666667
+    },
+    {
+      "aperture_m": 0.05109367316549421,
+      "motor_position_rad": 4.353771510208443,
+      "motor_torque_nm": 0.09269215997211777,
+      "target_position_pct": 100,
+      "time_s": 2.933333333333333
+    },
+    {
+      "aperture_m": 0.049071700787540605,
+      "motor_position_rad": 4.614200651466558,
+      "motor_torque_nm": 0.0924802390637991,
+      "target_position_pct": 100,
+      "time_s": 3.0
+    },
+    {
+      "aperture_m": 0.0470432495188369,
+      "motor_position_rad": 4.874643943542704,
+      "motor_torque_nm": 0.09226753700425716,
+      "target_position_pct": 100,
+      "time_s": 3.066666666666667
+    },
+    {
+      "aperture_m": 0.04500713338427875,
+      "motor_position_rad": 5.135296834613702,
+      "motor_torque_nm": 0.09205392930177458,
+      "target_position_pct": 100,
+      "time_s": 3.1333333333333333
+    },
+    {
+      "aperture_m": 0.042966748960208995,
+      "motor_position_rad": 5.395768589231972,
+      "motor_torque_nm": 0.09183977227250795,
+      "target_position_pct": 100,
+      "time_s": 3.2
+    },
+    {
+      "aperture_m": 0.040920916986891834,
+      "motor_position_rad": 5.6562546400958436,
+      "motor_torque_nm": 0.09162494223966844,
+      "target_position_pct": 100,
+      "time_s": 3.2666666666666666
+    },
+    {
+      "aperture_m": 0.038868442890850285,
+      "motor_position_rad": 5.91695046039167,
+      "motor_torque_nm": 0.09140931363246318,
+      "target_position_pct": 100,
+      "time_s": 3.3333333333333335
+    },
+    {
+      "aperture_m": 0.03681275087831289,
+      "motor_position_rad": 6.177465243058623,
+      "motor_torque_nm": 0.09119324617416336,
+      "target_position_pct": 100,
+      "time_s": 3.4
+    },
+    {
+      "aperture_m": 0.03475265196940714,
+      "motor_position_rad": 6.437994445653276,
+      "motor_torque_nm": 0.09097661499128051,
+      "target_position_pct": 100,
+      "time_s": 3.466666666666667
+    },
+    {
+      "aperture_m": 0.03268694482029447,
+      "motor_position_rad": 6.698733566568152,
+      "motor_torque_nm": 0.09075929362608459,
+      "target_position_pct": 100,
+      "time_s": 3.533333333333333
+    },
+    {
+      "aperture_m": 0.030619076061905864,
+      "motor_position_rad": 6.959291726502297,
+      "motor_torque_nm": 0.09054164466249937,
+      "target_position_pct": 100,
+      "time_s": 3.6
+    },
+    {
+      "aperture_m": 0.028547848811574607,
+      "motor_position_rad": 7.2198644080908565,
+      "motor_torque_nm": 0.09032354222118322,
+      "target_position_pct": 100,
+      "time_s": 3.6666666666666665
+    },
+    {
+      "aperture_m": 0.026472056793691388,
+      "motor_position_rad": 7.480647135090541,
+      "motor_torque_nm": 0.09010485915101096,
+      "target_position_pct": 100,
+      "time_s": 3.7333333333333334
+    },
+    {
+      "aperture_m": 0.024395163817760808,
+      "motor_position_rad": 7.741248955443291,
+      "motor_torque_nm": 0.08988596034498153,
+      "target_position_pct": 100,
+      "time_s": 3.8
+    },
+    {
+      "aperture_m": 0.022315966927895795,
+      "motor_position_rad": 8.001865377044759,
+      "motor_torque_nm": 0.0896667191103031,
+      "target_position_pct": 100,
+      "time_s": 3.8666666666666667
+    },
+    {
+      "aperture_m": 0.02023325676304094,
+      "motor_position_rad": 8.262691949135,
+      "motor_torque_nm": 0.08944700779708903,
+      "target_position_pct": 100,
+      "time_s": 3.933333333333333
+    },
+    {
+      "aperture_m": 0.018150509032021526,
+      "motor_position_rad": 8.52333764649266,
+      "motor_torque_nm": 0.08922719305160465,
+      "target_position_pct": 100,
+      "time_s": 4.0
+    },
+    {
+      "aperture_m": 0.016066516544706325,
+      "motor_position_rad": 8.783998002417194,
+      "motor_torque_nm": 0.08900714756130546,
+      "target_position_pct": 100,
+      "time_s": 4.066666666666666
+    },
+    {
+      "aperture_m": 0.013980068705773167,
+      "motor_position_rad": 9.04486859171229,
+      "motor_torque_nm": 0.08878674337290082,
+      "target_position_pct": 100,
+      "time_s": 4.133333333333334
+    },
+    {
+      "aperture_m": 0.012035241367986317,
+      "motor_position_rad": 9.287967260429307,
+      "motor_torque_nm": 0.08742417236836264,
+      "target_position_pct": 100,
+      "time_s": 4.2
+    },
+    {
+      "aperture_m": 0.010443560467884711,
+      "motor_position_rad": 9.486910115545058,
+      "motor_torque_nm": 0.08596051912943681,
+      "target_position_pct": 100,
+      "time_s": 4.266666666666667
+    },
+    {
+      "aperture_m": 0.009141908450695884,
+      "motor_position_rad": 9.649608465074298,
+      "motor_torque_nm": 0.08493648003561605,
+      "target_position_pct": 100,
+      "time_s": 4.333333333333333
+    },
+    {
+      "aperture_m": 0.008079686172541994,
+      "motor_position_rad": 9.782364759205187,
+      "motor_torque_nm": 0.08391460162321907,
+      "target_position_pct": 100,
+      "time_s": 4.4
+    },
+    {
+      "aperture_m": 0.007213272764067433,
+      "motor_position_rad": 9.890694491840414,
+      "motor_torque_nm": 0.08312350836265314,
+      "target_position_pct": 100,
+      "time_s": 4.466666666666667
+    },
+    {
+      "aperture_m": 0.006504256266342441,
+      "motor_position_rad": 9.979288089693636,
+      "motor_torque_nm": 0.08237878958729339,
+      "target_position_pct": 100,
+      "time_s": 4.533333333333333
+    },
+    {
+      "aperture_m": 0.005926529690219527,
+      "motor_position_rad": 10.051577564964827,
+      "motor_torque_nm": 0.08207638144881013,
+      "target_position_pct": 100,
+      "time_s": 4.6
+    },
+    {
+      "aperture_m": 0.005414930228821719,
+      "motor_position_rad": 10.107199213198095,
+      "motor_torque_nm": 0.08059380315211223,
+      "target_position_pct": 100,
+      "time_s": 4.666666666666667
+    },
+    {
+      "aperture_m": 0.005191040505220061,
+      "motor_position_rad": 10.108612355559412,
+      "motor_torque_nm": -6.142908876095621e-13,
+      "target_position_pct": 100,
+      "time_s": 4.733333333333333
+    },
+    {
+      "aperture_m": 0.005191040748646781,
+      "motor_position_rad": 10.108612355559412,
+      "motor_torque_nm": 3.3699269096791533e-19,
+      "target_position_pct": 100,
+      "time_s": 4.8
+    },
+    {
+      "aperture_m": 0.005191040748646781,
+      "motor_position_rad": 10.108612355559412,
+      "motor_torque_nm": 3.299361781093292e-19,
+      "target_position_pct": 100,
+      "time_s": 4.866666666666666
+    },
+    {
+      "aperture_m": 0.005191040748646781,
+      "motor_position_rad": 10.108612355559412,
+      "motor_torque_nm": 3.569168804416421e-19,
+      "target_position_pct": 100,
+      "time_s": 4.933333333333334
+    },
+    {
+      "aperture_m": 0.005191040748646781,
+      "motor_position_rad": 10.108612355559412,
+      "motor_torque_nm": 3.4281226430771724e-19,
+      "target_position_pct": 100,
+      "time_s": 5.0
+    },
+    {
+      "aperture_m": 0.005191040748646781,
+      "motor_position_rad": 10.108612355559412,
+      "motor_torque_nm": 3.5371361427119503e-19,
+      "target_position_pct": 100,
+      "time_s": 5.066666666666666
+    },
+    {
+      "aperture_m": 0.005191040748646781,
+      "motor_position_rad": 10.108612355559412,
+      "motor_torque_nm": 3.4102388453347157e-19,
+      "target_position_pct": 100,
+      "time_s": 5.133333333333334
+    },
+    {
+      "aperture_m": 0.005191040748646781,
+      "motor_position_rad": 10.108612355559412,
+      "motor_torque_nm": 3.4710673582360653e-19,
+      "target_position_pct": 100,
+      "time_s": 5.2
+    },
+    {
+      "aperture_m": 0.005191040748646781,
+      "motor_position_rad": 10.108612355559412,
+      "motor_torque_nm": 3.1598857742328536e-19,
+      "target_position_pct": 100,
+      "time_s": 5.266666666666667
+    },
+    {
+      "aperture_m": 0.005191040748646781,
+      "motor_position_rad": 10.108612355559412,
+      "motor_torque_nm": 3.381384622667851e-19,
+      "target_position_pct": 100,
+      "time_s": 5.333333333333333
+    },
+    {
+      "aperture_m": 0.005191040748646781,
+      "motor_position_rad": 10.108612355559412,
+      "motor_torque_nm": 3.027926041612648e-19,
+      "target_position_pct": 100,
+      "time_s": 5.4
+    },
+    {
+      "aperture_m": 0.005191040748646781,
+      "motor_position_rad": 10.108612355559412,
+      "motor_torque_nm": 3.21711174135279e-19,
+      "target_position_pct": 100,
+      "time_s": 5.466666666666667
+    },
+    {
+      "aperture_m": 0.005191040748646781,
+      "motor_position_rad": 10.108612355559412,
+      "motor_torque_nm": 3.1981401447490257e-19,
+      "target_position_pct": 100,
+      "time_s": 5.533333333333333
+    },
+    {
+      "aperture_m": 0.005191040748646781,
+      "motor_position_rad": 10.108612355559412,
+      "motor_torque_nm": 3.569924211591763e-19,
+      "target_position_pct": 100,
+      "time_s": 5.6
+    },
+    {
+      "aperture_m": 0.005191040748646781,
+      "motor_position_rad": 10.108612355559412,
+      "motor_torque_nm": 3.006388931307507e-19,
+      "target_position_pct": 100,
+      "time_s": 5.666666666666667
+    },
+    {
+      "aperture_m": 0.005191040748646781,
+      "motor_position_rad": 10.108612355559412,
+      "motor_torque_nm": 3.6679215263445785e-19,
+      "target_position_pct": 100,
+      "time_s": 5.733333333333333
+    },
+    {
+      "aperture_m": 0.005191040748646781,
+      "motor_position_rad": 10.108612355559412,
+      "motor_torque_nm": 3.5766727775929075e-19,
+      "target_position_pct": 100,
+      "time_s": 5.8
+    },
+    {
+      "aperture_m": 0.005191040748646781,
+      "motor_position_rad": 10.108612355559412,
+      "motor_torque_nm": 3.397552281916861e-19,
+      "target_position_pct": 100,
+      "time_s": 5.866666666666666
+    },
+    {
+      "aperture_m": 0.005191040748646781,
+      "motor_position_rad": 10.108612355559412,
+      "motor_torque_nm": 3.209062031808189e-19,
+      "target_position_pct": 100,
+      "time_s": 5.933333333333334
+    },
+    {
+      "aperture_m": 0.005191040748646781,
+      "motor_position_rad": 10.108612355559412,
+      "motor_torque_nm": 3.3897512591557347e-19,
+      "target_position_pct": 100,
+      "time_s": 6.0
+    },
+    {
+      "aperture_m": 0.0059444779916936995,
+      "motor_position_rad": 10.014119198384607,
+      "motor_torque_nm": -0.08516266154806518,
+      "target_position_pct": 0,
+      "time_s": 6.066666666666666
+    },
+    {
+      "aperture_m": 0.007865974568164517,
+      "motor_position_rad": 9.777020783137315,
+      "motor_torque_nm": -0.08782435129740529,
+      "target_position_pct": 0,
+      "time_s": 6.133333333333334
+    },
+    {
+      "aperture_m": 0.01020593046270564,
+      "motor_position_rad": 9.516260704174028,
+      "motor_torque_nm": -0.08749780888541903,
+      "target_position_pct": 0,
+      "time_s": 6.2
+    },
+    {
+      "aperture_m": 0.012292103285607592,
+      "motor_position_rad": 9.255484933468924,
+      "motor_torque_nm": -0.08727519080411561,
+      "target_position_pct": 0,
+      "time_s": 6.266666666666667
+    },
+    {
+      "aperture_m": 0.014379842336300977,
+      "motor_position_rad": 8.994498813759558,
+      "motor_torque_nm": -0.08705456941138401,
+      "target_position_pct": 0,
+      "time_s": 6.333333333333333
+    },
+    {
+      "aperture_m": 0.016465646091742083,
+      "motor_position_rad": 8.733693641331135,
+      "motor_torque_nm": -0.0868342518409384,
+      "target_position_pct": 0,
+      "time_s": 6.4
+    },
+    {
+      "aperture_m": 0.018550724748847353,
+      "motor_position_rad": 8.47287379040339,
+      "motor_torque_nm": -0.08661411016828646,
+      "target_position_pct": 0,
+      "time_s": 6.466666666666667
+    },
+    {
+      "aperture_m": 0.020636286331571663,
+      "motor_position_rad": 8.211843593644602,
+      "motor_torque_nm": -0.08639401697956162,
+      "target_position_pct": 0,
+      "time_s": 6.533333333333333
+    },
+    {
+      "aperture_m": 0.022718849031395566,
+      "motor_position_rad": 7.950994416158951,
+      "motor_torque_nm": -0.0861743397333865,
+      "target_position_pct": 0,
+      "time_s": 6.6
+    },
+    {
+      "aperture_m": 0.024799622004409945,
+      "motor_position_rad": 7.690130606606248,
+      "motor_torque_nm": -0.08595495078793691,
+      "target_position_pct": 0,
+      "time_s": 6.666666666666667
+    },
+    {
+      "aperture_m": 0.026879809221023877,
+      "motor_position_rad": 7.429056472228909,
+      "motor_torque_nm": -0.08573572333005641,
+      "target_position_pct": 0,
+      "time_s": 6.733333333333333
+    },
+    {
+      "aperture_m": 0.028955937487342015,
+      "motor_position_rad": 7.168163451491361,
+      "motor_torque_nm": -0.08551702341070433,
+      "target_position_pct": 0,
+      "time_s": 6.8
+    },
+    {
+      "aperture_m": 0.031029213069192138,
+      "motor_position_rad": 6.907255867569655,
+      "motor_torque_nm": -0.0852987238659666,
+      "target_position_pct": 0,
+      "time_s": 6.866666666666666
+    },
+    {
+      "aperture_m": 0.03310083403941083,
+      "motor_position_rad": 6.646138002419893,
+      "motor_torque_nm": -0.08508069867764201,
+      "target_position_pct": 0,
+      "time_s": 6.933333333333334
+    },
+    {
+      "aperture_m": 0.035167341152521146,
+      "motor_position_rad": 6.385201367528858,
+      "motor_torque_nm": -0.0848633119265565,
+      "target_position_pct": 0,
+      "time_s": 7.0
+    },
+    {
+      "aperture_m": 0.037229935938712655,
+      "motor_position_rad": 6.124250260703924,
+      "motor_torque_nm": -0.08464643712125897,
+      "target_position_pct": 0,
+      "time_s": 7.066666666666666
+    },
+    {
+      "aperture_m": 0.03928980873794896,
+      "motor_position_rad": 5.86308893879319,
+      "motor_torque_nm": -0.08442994923158365,
+      "target_position_pct": 0,
+      "time_s": 7.133333333333334
+    },
+    {
+      "aperture_m": 0.04134351957240974,
+      "motor_position_rad": 5.60210898585569,
+      "motor_torque_nm": -0.08421420980805472,
+      "target_position_pct": 0,
+      "time_s": 7.2
+    },
+    {
+      "aperture_m": 0.04339226339820945,
+      "motor_position_rad": 5.341114674483973,
+      "motor_torque_nm": -0.08399909322524657,
+      "target_position_pct": 0,
+      "time_s": 7.266666666666667
+    },
+    {
+      "aperture_m": 0.04543722099872983,
+      "motor_position_rad": 5.079910236634959,
+      "motor_torque_nm": -0.08378447563258629,
+      "target_position_pct": 0,
+      "time_s": 7.333333333333333
+    },
+    {
+      "aperture_m": 0.0474749769602338,
+      "motor_position_rad": 4.81888732837814,
+      "motor_torque_nm": -0.08357071549330897,
+      "target_position_pct": 0,
+      "time_s": 7.4
+    },
+    {
+      "aperture_m": 0.0495067178361058,
+      "motor_position_rad": 4.557850197283605,
+      "motor_torque_nm": -0.08335768824027978,
+      "target_position_pct": 0,
+      "time_s": 7.466666666666667
+    },
+    {
+      "aperture_m": 0.05153361304386161,
+      "motor_position_rad": 4.296603050672123,
+      "motor_torque_nm": -0.08314527139230421,
+      "target_position_pct": 0,
+      "time_s": 7.533333333333333
+    },
+    {
+      "aperture_m": 0.05355227699918478,
+      "motor_position_rad": 4.035537615950654,
+      "motor_torque_nm": -0.08293381977237635,
+      "target_position_pct": 0,
+      "time_s": 7.6
+    },
+    {
+      "aperture_m": 0.05556388603667506,
+      "motor_position_rad": 3.7744581158977617,
+      "motor_torque_nm": -0.08272321006233563,
+      "target_position_pct": 0,
+      "time_s": 7.666666666666667
+    },
+    {
+      "aperture_m": 0.05756959641592489,
+      "motor_position_rad": 3.513168733490633,
+      "motor_torque_nm": -0.08251332133806244,
+      "target_position_pct": 0,
+      "time_s": 7.733333333333333
+    },
+    {
+      "aperture_m": 0.05956605760800611,
+      "motor_position_rad": 3.2520612666908204,
+      "motor_torque_nm": -0.08230450423429003,
+      "target_position_pct": 0,
+      "time_s": 7.8
+    },
+    {
+      "aperture_m": 0.061554433928077745,
+      "motor_position_rad": 2.990939913753986,
+      "motor_torque_nm": -0.08209663687059265,
+      "target_position_pct": 0,
+      "time_s": 7.866666666666666
+    },
+    {
+      "aperture_m": 0.06353586670574504,
+      "motor_position_rad": 2.7296088336437943,
+      "motor_torque_nm": -0.08188960006528134,
+      "target_position_pct": 0,
+      "time_s": 7.933333333333334
+    },
+    {
+      "aperture_m": 0.0655070456458081,
+      "motor_position_rad": 2.468459893984301,
+      "motor_torque_nm": -0.08168373972257648,
+      "target_position_pct": 0,
+      "time_s": 8.0
+    },
+    {
+      "aperture_m": 0.06746912126149193,
+      "motor_position_rad": 2.2072972688145702,
+      "motor_torque_nm": -0.08147893558639785,
+      "target_position_pct": 0,
+      "time_s": 8.066666666666666
+    },
+    {
+      "aperture_m": 0.06942321820308268,
+      "motor_position_rad": 1.9459250934515762,
+      "motor_torque_nm": -0.08127507040016502,
+      "target_position_pct": 0,
+      "time_s": 8.133333333333333
+    },
+    {
+      "aperture_m": 0.07136607153159005,
+      "motor_position_rad": 1.684735304182068,
+      "motor_torque_nm": -0.08107248480200324,
+      "target_position_pct": 0,
+      "time_s": 8.2
+    },
+    {
+      "aperture_m": 0.07329881619671554,
+      "motor_position_rad": 1.4235320511718332,
+      "motor_torque_nm": -0.0808710603443128,
+      "target_position_pct": 0,
+      "time_s": 8.266666666666667
+    },
+    {
+      "aperture_m": 0.07522255844552532,
+      "motor_position_rad": 1.1621194464941957,
+      "motor_torque_nm": -0.08067068187536597,
+      "target_position_pct": 0,
+      "time_s": 8.333333333333334
+    },
+    {
+      "aperture_m": 0.07713408375368211,
+      "motor_position_rad": 0.90088949399242,
+      "motor_torque_nm": -0.08047168423909801,
+      "target_position_pct": 0,
+      "time_s": 8.4
+    },
+    {
+      "aperture_m": 0.07903450976938325,
+      "motor_position_rad": 0.6396463203389062,
+      "motor_torque_nm": -0.0802739509778001,
+      "target_position_pct": 0,
+      "time_s": 8.466666666666667
+    },
+    {
+      "aperture_m": 0.0809249226406652,
+      "motor_position_rad": 0.3781940148020251,
+      "motor_torque_nm": -0.08007736922112141,
+      "target_position_pct": 0,
+      "time_s": 8.533333333333333
+    },
+    {
+      "aperture_m": 0.08280216324413156,
+      "motor_position_rad": 0.11692464757055976,
+      "motor_torque_nm": -0.07988226749908423,
+      "target_position_pct": 0,
+      "time_s": 8.6
+    },
+    {
+      "aperture_m": 0.08466733021477464,
+      "motor_position_rad": -0.14435767776059175,
+      "motor_torque_nm": -0.07968853152223065,
+      "target_position_pct": 0,
+      "time_s": 8.666666666666666
+    },
+    {
+      "aperture_m": 0.08652148793649816,
+      "motor_position_rad": -0.40584889425435794,
+      "motor_torque_nm": -0.0794960508746323,
+      "target_position_pct": 0,
+      "time_s": 8.733333333333333
+    },
+    {
+      "aperture_m": 0.08836153759294094,
+      "motor_position_rad": -0.6671568666904757,
+      "motor_torque_nm": -0.07930514726187488,
+      "target_position_pct": 0,
+      "time_s": 8.8
+    },
+    {
+      "aperture_m": 0.09018855712309864,
+      "motor_position_rad": -0.9284775141003244,
+      "motor_torque_nm": -0.07911570873781715,
+      "target_position_pct": 0,
+      "time_s": 8.866666666666667
+    },
+    {
+      "aperture_m": 0.0920035875149153,
+      "motor_position_rad": -1.1900067913702335,
+      "motor_torque_nm": -0.07892762751024796,
+      "target_position_pct": 0,
+      "time_s": 8.933333333333334
+    },
+    {
+      "aperture_m": 0.09380359507701931,
+      "motor_position_rad": -1.4513524996636151,
+      "motor_torque_nm": -0.07874121795980527,
+      "target_position_pct": 0,
+      "time_s": 9.0
+    },
+    {
+      "aperture_m": 0.09558704934999401,
+      "motor_position_rad": -1.7123154561936709,
+      "motor_torque_nm": -0.07844195854157254,
+      "target_position_pct": 0,
+      "time_s": 9.066666666666666
+    },
+    {
+      "aperture_m": 0.09716190058501029,
+      "motor_position_rad": -1.944383970919009,
+      "motor_torque_nm": -0.07663516148757621,
+      "target_position_pct": 0,
+      "time_s": 9.133333333333333
+    },
+    {
+      "aperture_m": 0.09843706304427674,
+      "motor_position_rad": -2.133742391592915,
+      "motor_torque_nm": -0.07558800215334882,
+      "target_position_pct": 0,
+      "time_s": 9.2
+    },
+    {
+      "aperture_m": 0.09947250738881624,
+      "motor_position_rad": -2.288258039715025,
+      "motor_torque_nm": -0.0744778163422013,
+      "target_position_pct": 0,
+      "time_s": 9.266666666666667
+    },
+    {
+      "aperture_m": 0.10031527632282378,
+      "motor_position_rad": -2.414621652334399,
+      "motor_torque_nm": -0.0735251147710303,
+      "target_position_pct": 0,
+      "time_s": 9.333333333333334
+    },
+    {
+      "aperture_m": 0.10100026250689932,
+      "motor_position_rad": -2.5177291818716316,
+      "motor_torque_nm": -0.07291736265391147,
+      "target_position_pct": 0,
+      "time_s": 9.4
+    },
+    {
+      "aperture_m": 0.10155753458799696,
+      "motor_position_rad": -2.6018643897232825,
+      "motor_torque_nm": -0.07230982214619752,
+      "target_position_pct": 0,
+      "time_s": 9.466666666666667
+    },
+    {
+      "aperture_m": 0.10201229397963416,
+      "motor_position_rad": -2.670670545463409,
+      "motor_torque_nm": -0.07175806822461994,
+      "target_position_pct": 0,
+      "time_s": 9.533333333333333
+    },
+    {
+      "aperture_m": 0.10225015279255925,
+      "motor_position_rad": -2.706737264624158,
+      "motor_torque_nm": 3.061986501272131e-05,
+      "target_position_pct": 0,
+      "time_s": 9.6
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": 1.1843802561357012e-17,
+      "target_position_pct": 0,
+      "time_s": 9.666666666666666
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.046426241802425e-17,
+      "target_position_pct": 0,
+      "time_s": 9.733333333333333
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.0984746002800484e-17,
+      "target_position_pct": 0,
+      "time_s": 9.8
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.1811710363714846e-17,
+      "target_position_pct": 0,
+      "time_s": 9.866666666666667
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -2.8733545292254905e-17,
+      "target_position_pct": 0,
+      "time_s": 9.933333333333334
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.05802480492867e-17,
+      "target_position_pct": 0,
+      "time_s": 10.0
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.57663396676242e-17,
+      "target_position_pct": 0,
+      "time_s": 10.066666666666666
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.188547959698939e-17,
+      "target_position_pct": 0,
+      "time_s": 10.133333333333333
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -2.792713536810817e-17,
+      "target_position_pct": 0,
+      "time_s": 10.2
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.260966362373174e-17,
+      "target_position_pct": 0,
+      "time_s": 10.266666666666667
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.0456778149565567e-17,
+      "target_position_pct": 0,
+      "time_s": 10.333333333333334
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.021276779856143e-17,
+      "target_position_pct": 0,
+      "time_s": 10.4
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.124346167541179e-17,
+      "target_position_pct": 0,
+      "time_s": 10.466666666666667
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.002981532645031e-17,
+      "target_position_pct": 0,
+      "time_s": 10.533333333333333
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -2.7628329910134214e-17,
+      "target_position_pct": 0,
+      "time_s": 10.6
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.357887580834666e-17,
+      "target_position_pct": 0,
+      "time_s": 10.666666666666666
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -2.9196507681404616e-17,
+      "target_position_pct": 0,
+      "time_s": 10.733333333333333
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.003454567208437e-17,
+      "target_position_pct": 0,
+      "time_s": 10.8
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.0389447542297563e-17,
+      "target_position_pct": 0,
+      "time_s": 10.866666666666667
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.231195633192018e-17,
+      "target_position_pct": 0,
+      "time_s": 10.933333333333334
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.069324278965286e-17,
+      "target_position_pct": 0,
+      "time_s": 11.0
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -2.9554765629142024e-17,
+      "target_position_pct": 0,
+      "time_s": 11.066666666666666
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.3279725188613335e-17,
+      "target_position_pct": 0,
+      "time_s": 11.133333333333333
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.121153920842365e-17,
+      "target_position_pct": 0,
+      "time_s": 11.2
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.1274349687952455e-17,
+      "target_position_pct": 0,
+      "time_s": 11.266666666666667
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.346138420997467e-17,
+      "target_position_pct": 0,
+      "time_s": 11.333333333333334
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.175598235054624e-17,
+      "target_position_pct": 0,
+      "time_s": 11.4
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.247048266389155e-17,
+      "target_position_pct": 0,
+      "time_s": 11.466666666666667
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -2.9141097999813417e-17,
+      "target_position_pct": 0,
+      "time_s": 11.533333333333333
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.027421653727548e-17,
+      "target_position_pct": 0,
+      "time_s": 11.6
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.0765215526057316e-17,
+      "target_position_pct": 0,
+      "time_s": 11.666666666666666
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.2962618888799423e-17,
+      "target_position_pct": 0,
+      "time_s": 11.733333333333333
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -2.841228413944438e-17,
+      "target_position_pct": 0,
+      "time_s": 11.8
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -3.5219497347381306e-17,
+      "target_position_pct": 0,
+      "time_s": 11.866666666666667
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -2.9592936891705515e-17,
+      "target_position_pct": 0,
+      "time_s": 11.933333333333334
+    },
+    {
+      "aperture_m": 0.10225015642195517,
+      "motor_position_rad": -2.7067373369386805,
+      "motor_torque_nm": -2.842483192792971e-17,
+      "target_position_pct": 0,
+      "time_s": 12.0
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Rigid stock fingertips; conservative nominal command span, not calibrated hardware travel.",
+  "simulation_seconds": 12.499999999977538,
+  "speed_pct": 100,
+  "state_animation": false,
+  "studio": "Visual ground, plinth and lights; contacts disabled on studio geometry.",
+  "view": "drive-cutaway",
+  "warmup_seconds": 0.5,
+  "warning_count": 0,
+  "width": 800
+}

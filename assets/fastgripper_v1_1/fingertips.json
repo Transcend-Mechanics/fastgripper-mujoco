@@ -204,7 +204,7 @@
   "hardware_revision": "v1.1",
   "interface_scope": "Simulation attachment frames only; not a manufacturing interface specification.",
   "limitations": [
-    "No bolt patterns, threads, tolerances or mechanical fabrication dimensions are supplied.",
+    "No bolt patterns, threads, tolerances or fabrication instructions are supplied; exterior dimensions remain visible.",
     "The fixed attachment assumes tightened screws; fastener preload/compliance are unmodeled.",
     "Only stock-metal is included; flexible TPU behavior is not implemented."
   ],
